@@ -10,7 +10,7 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0">
                         <Link to="/" className="flex items-center">
                             <img
-                                src="./CollegeLogo.png"
+                                src="Collegeshodh logo_page-0001.png"
                                 className="mr-3 h-14"
                                 id="footer-logo"
                                 alt="Logo"
@@ -24,17 +24,27 @@ export default function Footer() {
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
                                     <Link to="#" className="hover:underline">
-                                        BSc
+                                        B. Arch
                                     </Link>
                                 </li>
                                 <li className="mb-4">
                                     <Link to="#" className="hover:underline">
-                                        BCA
+                                        B. Pharm
                                     </Link> 
                                 </li>
                                 <li className="mb-4">
                                     <Link to="#" className="hover:underline">
-                                        B.E / B.Tech
+                                        BCA
+                                    </Link>
+                                </li>
+                                <li className="mb-4">
+                                    <Link to="#" className="hover:underline">
+                                        BE/B. Tech
+                                    </Link>
+                                </li>
+                                <li className="mb-4">
+                                    <Link to="#" className="hover:underline">
+                                        B. Sc
                                     </Link>
                                 </li>
                             </ul>
@@ -162,17 +172,17 @@ export default function Footer() {
                         className="flex mt-2 justify-items-end ml-auto">
                             <ul className="text-gray-500 font-medium flex flex-row space-x-2 sm:flex-row justify-items-end mr-2 tracking-tighter ml-2">
                                 <li className="mb-4">
-                                <Link to="contact" className="hover:text-gray-700 hover:underline">
+                                <Link to="contact" className="hover:text-orange-700 hover:underline">
                                     Contact us
                                 </Link>
                                 </li>
                                 <li className="mb-4">
-                                <Link to="#" className="hover:text-gray-700 hover:underline">
+                                <Link to="#" className="hover:text-orange-700 hover:underline">
                                     Terms and Conditions
                                 </Link> 
                                 </li>
                                 <li className="mb-4">
-                                <Link to="#" className="hover:text-gray-700 hover:underline">
+                                <Link to="#" className="hover:text-orange-700 hover:underline">
                                     Privacy and Policy
                                 </Link>
                                 </li>
