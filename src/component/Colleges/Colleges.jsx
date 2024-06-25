@@ -18,7 +18,7 @@ function Colleges() {
 
   useEffect(() => {
     axios
-      .get('/api/courses')
+      .get('http://localhost:3001/api/courses')
 
       .then((response) => {
         // const data = response.data.map((college,index) => ({
@@ -33,10 +33,10 @@ function Colleges() {
       });
   }, []);
 
-  const parseNirfRank = (nirfString) => {
-    const match = nirfString.match(/NIRF\s*(\d+)/i);
-    return match ? parseInt(match[1], 10) : null;
-  };
+  // const parseNirfRank = (nirfString) => {
+  //   const match = nirfString.match(/NIRF\s*(\d+)/i);
+  //   return match ? parseInt(match[1], 10) : null;
+  // };
 
   const handleNaacFilter = (event) => {
     setFilterNaac(event.target.value);
