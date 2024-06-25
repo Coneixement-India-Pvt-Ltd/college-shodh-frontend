@@ -1,0 +1,46 @@
+@media screen and (max-width: 600px) {
+    .explore {
+    display: block;
+    flex-direction:row; 
+    }
+}
+
+
+/* Positioning the Explore button inside the hamburger menu for mobile view */
+@media screen and (max-width: 600px) {
+    .flex.items-center.lg\:order-2 {
+        flex-direction: row-reverse; 
+        align-items: center; 
+    }
+
+    /* .flex.items-center.lg\:order-2 .block.lg\:hidden.m-4 {
+        order: -1; 
+    } */
+
+    /* .flex.items-center.lg\:order-2 .lg\:hidden.ml-auto {
+        margin-left: 0; 
+    } */
+}
+
+#footer-logo{
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    #footer-logo {
+      display: none; 
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    #info {
+        font-size: small;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    #btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
