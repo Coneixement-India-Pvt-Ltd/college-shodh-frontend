@@ -163,14 +163,14 @@ function Colleges() {
         {/* <State onStateChange={handleStateChange} /> */}
 
         <div className="w-full pl-10 flex flex-col items-center">
-          {displayedColleges.map((college) => (
-            <div key={college.id} className="border-b border-gray-300 border rounded-lg p-4 mb-5 w-full mr-10">
+          {displayedColleges.map((college, index) => (
+            <div key={college._id} className="border-b border-gray-300 border rounded-lg p-4 mb-5 w-full mr-10">
               <h1 className="text-xl font-bold text-gray-900 mb-1 text-left">{college.college_name}</h1>
 
               <div className="flex flex-wrap">
                 <div className="w-1/2">
                   <p className="text-sm text-gray-600 mb-2 text-left">Address: {college.address}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">{college.university}</p>
+                  <p className="text-sm text-gray-600 mb-2 text-left">University: {college.university}</p>
                   <p className="text-sm text-gray-600 mb-2 text-left">Programs: {college.course}</p>
                   <p className="text-sm text-gray-600 mb-2 text-left">Department: {college.dept}</p>
                   <p className="text-sm text-gray-600 mb-2 text-left">NIRF Rank: {college.nirf}</p>
@@ -180,8 +180,8 @@ function Colleges() {
                 <div className="w-1/2">
                   <p className="text-sm text-gray-600 mb-2 text-left">Fees: {college.fees}</p>
                   <p className="text-sm text-gray-600 mb-2 text-left">Admission Criteria: {college.admission_criteria}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Admission Criteria: {college.intake}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Admission Criteria: {college.faculty}</p>
+                  <p className="text-sm text-gray-600 mb-2 text-left">Student Intake: {college.intake}</p>
+                  <p className="text-sm text-gray-600 mb-2 text-left">Faculty Count: {college.faculty}</p>
                   <p className="text-sm text-gray-600 mb-2 text-left">Contact: {college.contact}</p>
                   <p className="text-sm text-gray-600 mb-2 text-left">Email: {college.email}</p>
                   {/* <p className="text-sm text-gray-600 mb-2 text-left">Website: {college.website}</p> */}
