@@ -18,7 +18,7 @@ function Colleges() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/api/courses')
+      .get('https://college-shodh-backend.onrender.com/api/courses')
 
       .then((response) => {
         // const data = response.data.map((college,index) => ({
