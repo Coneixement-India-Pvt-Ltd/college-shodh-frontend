@@ -21,11 +21,6 @@ function Colleges() {
       .get('https://college-shodh-backend.onrender.com/api/courses')
 
       .then((response) => {
-        // const data = response.data.map((college,index) => ({
-        //   ...college,
-        //   nirf: parseNirfRank(college.nirf),
-        // }));
-        // console.log(data)
         setColleges(response.data);
       })
       .catch((error) => {
@@ -68,7 +63,7 @@ function Colleges() {
       ? college.address.toLowerCase().includes(selectedState.toLowerCase())
       : true;
     const isCourseMatch = selectedCourse
-      ? college.courses && college.courses.toLowerCase().includes(selectedCourse.toLowerCase())
+      ? college.course && college.course.toLowerCase().includes(selectedCourse.toLowerCase())
       : true;
     return (
       (search === '' || college.name.toLowerCase().includes(search.toLowerCase())) &&
@@ -127,8 +122,8 @@ function Colleges() {
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${selectedCourse === 'BE/B. Tech' ? 'bg-blue-500 text-white' : ''}`}
-          onClick={() => handleCourseChange('BE/B. Tech')}
+          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${selectedCourse === 'Engineering' ? 'bg-blue-500 text-white' : ''}`}
+          onClick={() => handleCourseChange('Engineering')}
         >
           <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">BE/B. Tech</span>
         </button>
@@ -151,18 +146,20 @@ function Colleges() {
         </button>
       </div>
 
-      <Ranking
-        filterNaac={filterNaac}
-        handleNaacFilter={handleNaacFilter}
-        sortOrder={sortOrder}
-        handleSortChange={handleSortChange}
-        onStateChange={handleStateChange}
-      />
+      
+      <div className="flex justify-between">
+        
+        <div className="w-1/4 ml-4 mt-4">
+        <Ranking
+          filterNaac={filterNaac}
+          handleNaacFilter={handleNaacFilter}
+          sortOrder={sortOrder}
+          handleSortChange={handleSortChange}
+          onStateChange={handleStateChange}
+        />
+      </div>
 
-      <div className="flex justify-between mt-5">
-        {/* <State onStateChange={handleStateChange} /> */}
-
-        <div className="w-full pl-10 flex flex-col items-center">
+        <div className="w-full pl-10 flex flex-col items-center w-3/4">
           {displayedColleges.map((college, index) => (
             <div key={college._id} className="border-b border-gray-300 border rounded-lg p-4 mb-5 w-full mr-10">
               <h1 className="text-xl font-bold text-gray-900 mb-1 text-left">{college.college_name}</h1>

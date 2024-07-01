@@ -81,7 +81,7 @@ function State({ onStateChange }) {
           <MenuItem value="" disabled>
             Cities
           </MenuItem>
-              <MenuItem value="Pune">Pune</MenuItem>
+              <MenuItem value="kr">Kurukshetra</MenuItem>
 	            <MenuItem value="Mu">Mumbai</MenuItem>
 	            <MenuItem value="Ch">Chennai</MenuItem>
 	            <MenuItem value="Dl">Delhi</MenuItem>

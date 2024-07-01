@@ -1,15 +1,22 @@
-import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import Grid from '@mui/material/Grid';
 import React, { useState } from 'react';
+import Grid from '@mui/material/Grid';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Slider from '@mui/material/Slider';
 
 function Ranking({ filterNaac, handleNaacFilter, sortOrder, handleSortChange, onStateChange }) {
   const [selectedState, setSelectedState] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
+  const [nirfRanking, setNirfRanking] = useState([0, 200]);
 
   const handleStateChange = (event) => {
     setSelectedState(event.target.value);
     onStateChange(event.target.value);
+  };
+
+  const handleSliderChange = (event, newValue) => {
+    setNirfRanking(newValue);
+    handleSortChange(newValue);
   };
 
   const handleCityChange = (event) => {
@@ -17,126 +24,122 @@ function Ranking({ filterNaac, handleNaacFilter, sortOrder, handleSortChange, on
     onStateChange(event.target.value);
   };
 
+  const naacOptions = ['NAAC A', 'NAAC A+', 'NAAC A++', 'NAAC B', 'NAAC B+', 'NAAC B++', 'NAAC C', 'NAAC D'];
+  const stateOptions = [
+    'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Gujarat', 'Haryana', 'Himachal Pradesh',
+    'Jammu and Kashmir', 'Goa', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur',
+    'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana',
+    'Tripura', 'Uttarakhand', 'Uttar Pradesh', 'West Bengal', 'Andaman and Nicobar Islands', 'Chandigarh',
+    'Dadra and Nagar Haveli', 'Daman and Diu', 'Delhi', 'Lakshadweep', 'Puducherry'
+  ];
+  const cityOptions = ['Kurukshetra', 'Mumbai', 'Chennai', 'Delhi', 'Hyderabad', 'Bengaluru', 'Jaipur', 'Ahemdabad', 'Kolkata', 'Indore'];
+
+  const formControlLabelStyle = {
+    display: 'flex',
+    justifyContent: 'flex-start',
+  };
+
   return (
-    <Grid container spacing={2} className="ml-2 mt-5">
-      <Grid item xs={12} sm={6} md={3}>
-        <Select
-          value={filterNaac}
-          onChange={handleNaacFilter}
-          displayEmpty
-          fullWidth
-          inputProps={{ 'aria-label': 'NAAC Filter' }}
-        >
-          <MenuItem value="" disabled>
-            NAAC Rating
-          </MenuItem>
-          <MenuItem value="NAAC A"> NAAC A </MenuItem>
-          <MenuItem value="NAAC A+"> NAAC A+ </MenuItem>
-          <MenuItem value="NAAC A++"> NAAC A++ </MenuItem>
-          <MenuItem value="NAAC B">NAAC B</MenuItem>
-          <MenuItem value="NAAC B+">NAAC B+</MenuItem>
-          <MenuItem value="NAAC B++">NAAC B++</MenuItem>
-          <MenuItem value="NAAC C">NAAC C</MenuItem>
-          <MenuItem value="NAAC D">NAAC D</MenuItem>
-        </Select>
+    <Grid container direction="column" spacing={2} className="ml-2 mt-5">
+      <Grid item className='border border-black-500 rounded-md'>
+        <h4 className='font-bold mb-3'>NAAC Rating</h4>
       </Grid>
+      {naacOptions.map((option) => (
+        <Grid item key={option}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={filterNaac === option}
+                onChange={(event) => handleNaacFilter(event.target.value)}
+                value={option}
+              />
+            }
+            label={option}
+            style={formControlLabelStyle}
+          />
+        </Grid>
+      ))}
 
-      <Grid item xs={12} sm={6} md={3}>
-        <Select
-          value={sortOrder}
-          onChange={handleSortChange}
-          displayEmpty
-          fullWidth
-          inputProps={{ 'aria-label': 'Sort Order' }}
-        >
-          <MenuItem value="" disabled>
-            Sort by NIRF Ranking
-          </MenuItem>
-          <MenuItem value="lowToHigh">Low to High</MenuItem>
-          <MenuItem value="highToLow">High to Low</MenuItem>
-        </Select>
+      <Grid item className='border border-black-500 rounded-md'>
+        <h4 className='font-bold mb-3'>NIRF Ranking</h4>
+      </Grid>
+      <Grid item>
+        <Slider
+          value={nirfRanking}
+          onChange={handleSliderChange}
+          valueLabelDisplay="auto"
+          min={0}
+          max={200}
+          step={1}
+        />
       </Grid>
       
-      <Grid item xs={12} sm={6} md={3}>
-        <Select
-          value={selectedState}
-          onChange={handleStateChange}
-          displayEmpty
-          fullWidth
-          inputProps={{ 'aria-label': 'State Filter' }}
-        >
-          <MenuItem value="" disabled>
-            Select State
-          </MenuItem>
-          <MenuItem value="Andhra Pradesh">Andhra Pradesh</MenuItem>
-          <MenuItem value="Arunachal Pradesh">Arunachal Pradesh</MenuItem>
-          <MenuItem value="Assam">Assam</MenuItem>
-          <MenuItem value="Bihar">Bihar</MenuItem>
-          <MenuItem value="Chhattisgarh">Chhattisgarh</MenuItem>
-          <MenuItem value="Gujarat">Gujarat</MenuItem>
-          <MenuItem value="Haryana">Haryana</MenuItem>
-          <MenuItem value="Himachal Pradesh">Himachal Pradesh</MenuItem>
-          <MenuItem value="Jammu and Kashmir">Jammu and Kashmir</MenuItem>
-          <MenuItem value="Goa">Goa</MenuItem>
-          <MenuItem value="Jharkhand">Jharkhand</MenuItem>
-          <MenuItem value="Karnataka">Karnataka</MenuItem>
-          <MenuItem value="Kerala">Kerala</MenuItem>
-          <MenuItem value="Madhya Pradesh">Madhya Pradesh</MenuItem>
-          <MenuItem value="Maharashtra">Maharashtra</MenuItem>
-          <MenuItem value="Manipur">Manipur</MenuItem>
-          <MenuItem value="Meghalaya">Meghalaya</MenuItem>
-          <MenuItem value="Mizoram">Mizoram</MenuItem>
-          <MenuItem value="Nagaland">Nagaland</MenuItem>
-          <MenuItem value="Odisha">Odisha</MenuItem>
-          <MenuItem value="Punjab">Punjab</MenuItem>
-          <MenuItem value="Rajasthan">Rajasthan</MenuItem>
-          <MenuItem value="Sikkim">Sikkim</MenuItem>
-          <MenuItem value="Tamil Nadu">Tamil Nadu</MenuItem>
-          <MenuItem value="Telangana">Telangana</MenuItem>
-          <MenuItem value="Tripura">Tripura</MenuItem>
-          <MenuItem value="Uttarakhand">Uttarakhand</MenuItem>
-          <MenuItem value="Uttar Pradesh">Uttar Pradesh</MenuItem>
-          <MenuItem value="West Bengal">West Bengal</MenuItem>
-          <MenuItem value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</MenuItem>
-          <MenuItem value="Chandigarh">Chandigarh</MenuItem>
-          <MenuItem value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</MenuItem>
-          <MenuItem value="Daman and Diu">Daman and Diu</MenuItem>
-          <MenuItem value="Delhi">Delhi</MenuItem>
-          <MenuItem value="Lakshadweep">Lakshadweep</MenuItem>
-          <MenuItem value="Puducherry">Puducherry</MenuItem>
-        </Select>
-      </Grid>
-
-      <Grid item xs={12} sm={6} md={3}>
-        <Select
-          value={selectedCity}
-          onChange={handleCityChange}
-          displayEmpty
-          fullWidth
-          inputProps={{ 'aria-label': 'City Filter' }}
-        >
-          <MenuItem value="" disabled>
-            Select City
-          </MenuItem>
-          <MenuItem value="Pune">Pune</MenuItem>
-          <MenuItem value="Mu">Mumbai</MenuItem>
-          <MenuItem value="Ch">Chennai</MenuItem>
-          <MenuItem value="Dl">Delhi</MenuItem>
-          <MenuItem value="Hy">Hyderabad</MenuItem>
-          <MenuItem value="GA">Bengaluru</MenuItem>
-          <MenuItem value="HR">Jaipur</MenuItem>
-          <MenuItem value="HP">Ahemdabad</MenuItem>
-          <MenuItem value="JK">Kolkata</MenuItem>
-          <MenuItem value="GA">Indore</MenuItem>
-        </Select>
-      </Grid>
-
+      {/* <Grid item>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={sortOrder === 'lowToHigh'}
+              onChange={(event) => handleSortChange(event.target.value)}
+              value="lowToHigh"
+            />
+          }
+          label="Low to High"
+          style={formControlLabelStyle}
+        />
+      </Grid> */}
+      {/* <Grid item>
+        <FormControlLabel
+          control={
+            <Checkbox
+              checked={sortOrder === 'highToLow'}
+              onChange={(event) => handleSortChange(event.target.value)}
+              value="highToLow"
+            />
+          }
+          label="High to Low"
+          style={formControlLabelStyle}
+        />
+      </Grid> */}
       
+      <Grid item className='border border-black-500 rounded-md'>
+        <h4 className='font-bold mb-3'>Select State</h4>
+      </Grid>
+      {stateOptions.map((state) => (
+        <Grid item key={state}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={selectedState === state}
+                onChange={handleStateChange}
+                value={state}
+              />
+            }
+            label={state}
+            style={formControlLabelStyle}
+          />
+        </Grid>
+      ))}
+
+      <Grid item className='border border-black-500 rounded-md'>
+        <h4 className='font-bold mb-3'>Select City</h4>
+      </Grid>
+      {cityOptions.map((city) => (
+        <Grid item key={city}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={selectedCity === city}
+                onChange={handleCityChange}
+                value={city}
+              />
+            }
+            label={city}
+            style={formControlLabelStyle}
+          />
+        </Grid>
+      ))}
     </Grid>
   );
 }
 
 export default Ranking;
-
-
-
