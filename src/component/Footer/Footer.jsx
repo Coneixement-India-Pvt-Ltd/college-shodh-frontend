@@ -23,30 +23,28 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Top Colleges</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="#" className="hover:underline">
-                                        B. Arch
+                                    <Link to="#" className="hover:text-orange-700 hover:underline">
+                                    NATIONAL INSTITUTE OF TECHNOLOGY (Agartala)
                                     </Link>
                                 </li>
                                 <li className="mb-4">
-                                    <Link to="#" className="hover:underline">
-                                        B. Pharm
+                                    <Link to="#" className="hover:text-orange-700 hover:underline">
+                                    NATIONAL INSTITUTE OF TECHNOLOGY (Dakshina Kannada)
                                     </Link> 
                                 </li>
                                 <li className="mb-4">
-                                    <Link to="#" className="hover:underline">
-                                        BCA
+                                    <Link to="#" className="hover:text-orange-700 hover:underline">
+                                    NATIONAL INSTITUTE OF TECHNOLOGY (Agartala)
+
                                     </Link>
                                 </li>
                                 <li className="mb-4">
-                                    <Link to="#" className="hover:underline">
-                                        BE/B. Tech
+                                    <Link to="#" className="hover:text-orange-700 hover:underline">
+                                    NATIONAL INSTITUTE OF TECHNOLOGY (Agartala)
+
                                     </Link>
                                 </li>
-                                <li className="mb-4">
-                                    <Link to="#" className="hover:underline">
-                                        B. Sc
-                                    </Link>
-                                </li>
+                                
                             </ul>
                         </div>
                     
@@ -99,7 +97,7 @@ export default function Footer() {
                     <div className="flex">
 
                     <div className="flex mt-4 space-x-4 ml-2 sm:justify-left mr-3">
-                        <Link to="#" className="text-gray-500 hover:text-gray-700">
+                        <Link to="#" className="text-gray-500 hover:text-blue-600 active:text-blue-600">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"
@@ -116,7 +114,7 @@ export default function Footer() {
                             <span className="sr-only">Facebook page</span>
                         </Link>
                         
-                        <Link to="#" className="text-gray-500 hover:text-gray-700">
+                        <Link to="#" className="text-gray-500 hover:text-blue-600 active:text-blue-600">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"
@@ -132,7 +130,7 @@ export default function Footer() {
                             </svg>
                             <span className="sr-only">Twitter page</span>
                         </Link>
-                        <Link to="#" className="text-gray-500 hover:text-gray-700">
+                        <Link to="#" className="text-gray-500 hover:text-slate-950 active:text-slate-950">
                             <svg
                                 className="w-4 h-4"
                                 aria-hidden="true"
