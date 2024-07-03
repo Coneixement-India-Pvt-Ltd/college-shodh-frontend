@@ -5,21 +5,12 @@
     }
 }
 
-
 /* Positioning the Explore button inside the hamburger menu for mobile view */
 @media screen and (max-width: 600px) {
     .flex.items-center.lg\:order-2 {
         flex-direction: row-reverse; 
         align-items: center; 
     }
-
-    /* .flex.items-center.lg\:order-2 .block.lg\:hidden.m-4 {
-        order: -1; 
-    } */
-
-    /* .flex.items-center.lg\:order-2 .lg\:hidden.ml-auto {
-        margin-left: 0; 
-    } */
 }
 
 #footer-logo{
@@ -44,3 +35,7 @@
         align-items: center;
     }
 }
+
+
+
+

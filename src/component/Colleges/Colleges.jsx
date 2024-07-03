@@ -1,24 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Button from '@mui/material/Button';
-import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Button from "@mui/material/Button";
+import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 //import State from './State';
-import Ranking from './Ranking';
+import Ranking from "./Ranking";
+
+import { IoLocationOutline } from "react-icons/io5";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { FaRegBuilding } from "react-icons/fa";
+import { PiStudentFill } from "react-icons/pi";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { IoNewspaperOutline } from "react-icons/io5";
+
 
 function Colleges() {
   const [colleges, setColleges] = useState([]);
-  const [search, setSearch] = useState('');
-  const [filterNaac, setFilterNaac] = useState('');
-  const [sortOrder, setSortOrder] = useState('');
-  const [selectedState, setSelectedState] = useState('');
-  const [selectedCourse, setSelectedCourse] = useState('');
+  const [search, setSearch] = useState("");
+  const [filterNaac, setFilterNaac] = useState("");
+  const [sortOrder, setSortOrder] = useState("");
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedCourse, setSelectedCourse] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const collegesPerPage = 10;
 
   useEffect(() => {
     axios
-      .get('https://college-shodh-backend.onrender.com/api/courses')
+      .get("https://college-shodh-backend.onrender.com/api/courses")
 
       .then((response) => {
         setColleges(response.data);
@@ -40,9 +49,9 @@ function Colleges() {
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
     const sortedColleges = [...colleges].sort((a, b) => {
-      if (event.target.value === 'lowToHigh') {
+      if (event.target.value === "lowToHigh") {
         return a.nirf - b.nirf;
-      } else if (event.target.value === 'highToLow') {
+      } else if (event.target.value === "highToLow") {
         return b.nirf - a.nirf;
       }
       return 0;
@@ -63,10 +72,12 @@ function Colleges() {
       ? college.address.toLowerCase().includes(selectedState.toLowerCase())
       : true;
     const isCourseMatch = selectedCourse
-      ? college.course && college.course.toLowerCase().includes(selectedCourse.toLowerCase())
+      ? college.course &&
+        college.course.toLowerCase().includes(selectedCourse.toLowerCase())
       : true;
     return (
-      (search === '' || college.name.toLowerCase().includes(search.toLowerCase())) &&
+      (search === "" ||
+        college.name.toLowerCase().includes(search.toLowerCase())) &&
       (!filterNaac || college.naac === filterNaac) &&
       isStateMatch &&
       isCourseMatch
@@ -85,7 +96,9 @@ function Colleges() {
   return (
     <>
       <div className="flex justify-evenly mt-5">
-        <h2 className="text-3xl font-sans font-bold text-black-700 mt-2">Follow Your Passion</h2>
+        <h2 className="text-3xl font-sans font-bold text-black-700 mt-2">
+          Follow Your Passion
+        </h2>
         <div className="relative">
           <input
             type="text"
@@ -99,97 +112,174 @@ function Colleges() {
         {/* <p className="mt-3 text-blue-700 font-bold font-sans text-xl">Total Results: {filteredColleges.length}</p> */}
       </div>
 
-      <div className='mt-5 mb-5 btn-container'>
+      <div className="mt-5 mb-5 btn-container">
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${selectedCourse === 'B. Arch' ? 'bg-blue-500 text-white' : ''}`}
-          onClick={() => handleCourseChange('B. Arch')}
+          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+            selectedCourse === "B. Arch" ? "bg-blue-500 text-white" : ""
+          }`}
+          onClick={() => handleCourseChange("B. Arch")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">B. Arch</span>
+          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+            B. Arch
+          </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${selectedCourse === 'B. Pharm' ? 'bg-blue-500 text-white' : ''}`}
-          onClick={() => handleCourseChange('B. Pharm')}
+          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+            selectedCourse === "B. Pharm" ? "bg-blue-500 text-white" : ""
+          }`}
+          onClick={() => handleCourseChange("B. Pharm")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">B. Pharm</span>
+          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+            B. Pharm
+          </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${selectedCourse === 'BCA' ? 'bg-blue-500 text-white' : ''}`}
-          onClick={() => handleCourseChange('BCA')}
+          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+            selectedCourse === "BCA" ? "bg-blue-500 text-white" : ""
+          }`}
+          onClick={() => handleCourseChange("BCA")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">BCA</span>
+          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+            BCA
+          </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${selectedCourse === 'Engineering' ? 'bg-blue-500 text-white' : ''}`}
-          onClick={() => handleCourseChange('Engineering')}
+          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+            selectedCourse === "Engineering" ? "bg-blue-500 text-white" : ""
+          }`}
+          onClick={() => handleCourseChange("Engineering")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">BE/B. Tech</span>
+          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+            BE/B. Tech
+          </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${selectedCourse === 'B. Sc' ? 'bg-blue-500 text-white' : ''}`}
-          onClick={() => handleCourseChange('B. Sc')}
+          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+            selectedCourse === "B. Sc" ? "bg-blue-500 text-white" : ""
+          }`}
+          onClick={() => handleCourseChange("B. Sc")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">B. Sc</span>
+          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+            B. Sc
+          </span>
         </button>
       </div>
 
-      <div className='mt-5 mb-5 btn-container'>
-        <button id="science" className='h-16 w-96 bg-[#cbd5e1] border border-black-500 rounded-md hover:drop-shadow-lg'>
-          <Link to="#" className="hover:underline text-gray-800 font-medium hover:text-orange-600">Top Cities</Link>
+      <div className="mt-5 mb-5 btn-container">
+        <button
+          id="science"
+          className="h-16 w-96 bg-[#cbd5e1] border border-black-500 rounded-md hover:drop-shadow-lg"
+        >
+          <Link
+            to="#"
+            className="hover:underline text-gray-800 font-medium hover:text-orange-600"
+          >
+            Top Cities
+          </Link>
         </button>
 
-        <button id="engineering" className='h-16 w-96 bg-[#cbd5e1] border border-black-800 rounded-md items-center hover:drop-shadow-lg'>
-          <Link to="#" className="hover:underline text-gray-800 font-medium hover:text-orange-600">Top Colleges</Link>
+        <button
+          id="engineering"
+          className="h-16 w-96 bg-[#cbd5e1] border border-black-800 rounded-md items-center hover:drop-shadow-lg"
+        >
+          <Link
+            to="#"
+            className="hover:underline text-gray-800 font-medium hover:text-orange-600"
+          >
+            Top Colleges
+          </Link>
         </button>
       </div>
 
-      
       <div className="flex justify-between">
-        
         <div className="w-1/4 ml-4 mt-4">
-        <Ranking
-          filterNaac={filterNaac}
-          handleNaacFilter={handleNaacFilter}
-          sortOrder={sortOrder}
-          handleSortChange={handleSortChange}
-          onStateChange={handleStateChange}
-        />
-      </div>
+          <Ranking
+            filterNaac={filterNaac}
+            handleNaacFilter={handleNaacFilter}
+            sortOrder={sortOrder}
+            handleSortChange={handleSortChange}
+            onStateChange={handleStateChange}
+          />
+        </div>
 
-        <div className="w-full pl-10 flex flex-col items-center w-3/4">
+        <div className="w-full pl-10 flex flex-col items-center">
           {displayedColleges.map((college, index) => (
-            <div key={college._id} className="border-b border-gray-300 border rounded-lg p-4 mb-5 w-full mr-10">
-              <h1 className="text-xl font-bold text-gray-900 mb-1 text-left">{college.college_name}</h1>
+            <div
+              key={college._id}
+              className="border-b border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-36 ml-20 hover:shadow-2xl transition-shadow "
+            >
+              <h1 className="text-xl font-bold text-gray-900 text-left">
+                {college.college_name}
+              </h1>
 
               <div className="flex flex-wrap">
                 <div className="w-1/2">
-                  <p className="text-sm text-gray-600 mb-2 text-left">Address: {college.address}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">University: {college.university}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Programs: {college.course}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Department: {college.dept}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">NIRF Rank: {college.nirf}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">NAAC: {college.naac}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">NBA: {college.nba}</p>
+                  <p
+                    className="text-sm text-gray-600 mb-2 text-left flex items-center
+                  "
+                  >
+                    <IoLocationOutline className="text-orange-500 size-5 mr-1" />
+                    <i> {college.address} </i>
+                    {/* {college.university} */}
+                  </p>
+
+                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                  <FaRegBuilding className="text-orange-500 size-5 mr-2" /> Dept: {college.dept}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                  <PiStudentFill className="text-orange-500 size-5 mr-2" /> Student Intake: {college.intake}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                  <FaPeopleGroup className="text-orange-500 size-5 mr-2" /> Faculty Count: {college.faculty}
+                  </p>
+
+                  <div className="text-sm text-gray-600 mb-1 text-left flex items-center ">
+                  <IoNewspaperOutline className="text-orange-500" /> Admission Criteria:
+                    <p>
+                     {college.admission_criteria}
+                    </p>
+                  </div>
                 </div>
-                <div className="w-1/2">
-                  <p className="text-sm text-gray-600 mb-2 text-left">Fees: {college.fees}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Admission Criteria: {college.admission_criteria}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Student Intake: {college.intake}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Faculty Count: {college.faculty}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Contact: {college.contact}</p>
-                  <p className="text-sm text-gray-600 mb-2 text-left">Email: {college.email}</p>
-                  {/* <p className="text-sm text-gray-600 mb-2 text-left">Website: {college.website}</p> */}
+
+                <div className="mt-7">
+                  <p className="text-sm text-gray-600 mb-1 text-left">
+                    NIRF Rank: {college.nirf}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1 text-left">
+                    NBA: {college.nba}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1 text-left">
+                    NAAC: {college.naac}
+                  </p>
+                  {/* <p className="text-sm text-gray-600 mb-1 text-left">
+                    Fees: {college.fees}
+                  </p> */}
                 </div>
-              </div>
-              <div className="flex justify-end mt-2">
-                <Link to={college.website}>
-                  <Button variant="contained" color="success">
-                    Know more
-                  </Button>
-                </Link>
+
+                <hr className="w-full mb-2" />
+
+                <div>
+                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                    <FaPhoneAlt className="mr-2 text-orange-400 size-4" />{" "}
+                    {college.contact}
+                  </p>
+                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                    <MdEmail className="mr-2 text-orange-400 size-5" />{" "}
+                    {college.email}
+                  </p>
+                </div>
+
+                <div className="flex justify-end mt-2 ml-auto mb-1">
+                  <Link to={college.website}>
+                    <Button variant="contained" className="text-blue-800">
+                      Know more
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           ))}
@@ -211,4 +301,3 @@ function Colleges() {
 }
 
 export default Colleges;
-
