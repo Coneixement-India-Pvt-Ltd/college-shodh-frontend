@@ -40,7 +40,7 @@ function State({ onStateChange }) {
         <MenuItem value="Gujarat">Gujarat</MenuItem>
         <MenuItem value="Haryana">Haryana</MenuItem>
         <MenuItem value="Himachal Pradesh">Himachal Pradesh</MenuItem>
-        <MenuItem value="Jammu and Kashmir">Jammu and Kashmir</MenuItem>
+        <MenuItem value="Jammu and Kashmir">Jammu & Kashmir</MenuItem>
         <MenuItem value="Goa">Goa</MenuItem>
         <MenuItem value="Jharkhand">Jharkhand</MenuItem>
         <MenuItem value="Karnataka">Karnataka</MenuItem>
@@ -61,9 +61,9 @@ function State({ onStateChange }) {
         <MenuItem value="Uttarakhand">Uttarakhand</MenuItem>
         <MenuItem value="Uttar Pradesh">Uttar Pradesh</MenuItem>
         <MenuItem value="West Bengal">West Bengal</MenuItem>
-        <MenuItem value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</MenuItem>
+        {/* <MenuItem value="Andaman & Nicobar">Andaman & Nicobar</MenuItem> */}
         <MenuItem value="Chandigarh">Chandigarh</MenuItem>
-        <MenuItem value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</MenuItem>
+        <MenuItem value="Dadra and Nagar Haveli">Dadra & Nagar Haveli</MenuItem>
         <MenuItem value="Daman and Diu">Daman and Diu</MenuItem>
         <MenuItem value="Delhi">Delhi</MenuItem>
         <MenuItem value="Lakshadweep">Lakshadweep</MenuItem>

@@ -105,7 +105,7 @@ function Colleges() {
             id="search"
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search college"
-            className="p-2 h-11 w-96 mb-5 border border-gray-400 rounded-2xl focus:outline-none focus:border-gray-600 text-center pl-10"
+            className="p-2 h-11 w-96 mb-5 border border-black-400 rounded-2xl focus:outline-none focus:border-blue-600 text-center pl-10"
           />
           <SearchIcon className="absolute left-3 top-3 text-gray-400" />
         </div>
@@ -114,62 +114,62 @@ function Colleges() {
 
       <div className="mt-5 mb-5 btn-container">
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
             selectedCourse === "B. Arch" ? "bg-blue-500 text-white" : ""
           }`}
           onClick={() => handleCourseChange("B. Arch")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium hover:text-orange-600">
             B. Arch
           </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
             selectedCourse === "B. Pharm" ? "bg-blue-500 text-white" : ""
           }`}
           onClick={() => handleCourseChange("B. Pharm")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium hover:text-orange-600">
             B. Pharm
           </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
             selectedCourse === "BCA" ? "bg-blue-500 text-white" : ""
           }`}
           onClick={() => handleCourseChange("BCA")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium hover:text-orange-600">
             BCA
           </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
             selectedCourse === "Engineering" ? "bg-blue-500 text-white" : ""
           }`}
           onClick={() => handleCourseChange("Engineering")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium hover:text-orange-600">
             BE/B. Tech
           </span>
         </button>
 
         <button
-          className={`h-16 w-32 bg-[#cbd5e1] border border-black-100 rounded-md hover:drop-shadow-lg ${
+          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
             selectedCourse === "B. Sc" ? "bg-blue-500 text-white" : ""
           }`}
           onClick={() => handleCourseChange("B. Sc")}
         >
-          <span className="hover:underline text-gray-800 font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium hover:text-orange-600">
             B. Sc
           </span>
         </button>
       </div>
 
-      <div className="mt-5 mb-5 btn-container">
+      {/* <div className="mt-5 mb-5 btn-container">
         <button
           id="science"
           className="h-16 w-96 bg-[#cbd5e1] border border-black-500 rounded-md hover:drop-shadow-lg"
@@ -193,7 +193,7 @@ function Colleges() {
             Top Colleges
           </Link>
         </button>
-      </div>
+      </div> */}
 
       <div className="flex justify-between">
         <div className="w-1/4 ml-4 mt-4">
@@ -206,11 +206,11 @@ function Colleges() {
           />
         </div>
 
-        <div className="w-full pl-10 flex flex-col items-center">
+        <div className="w-full pl-10 flex flex-col mt-3 items-center">
           {displayedColleges.map((college, index) => (
             <div
               key={college._id}
-              className="border-b border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-36 ml-20 hover:shadow-2xl transition-shadow "
+              className="border-b border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-32 ml-20 hover:shadow-2xl transition-shadow "
             >
               <h1 className="text-xl font-bold text-gray-900 text-left">
                 {college.college_name}
@@ -238,7 +238,7 @@ function Colleges() {
                   </p>
 
                   <div className="text-sm text-gray-600 mb-1 text-left flex items-center ">
-                  <IoNewspaperOutline className="text-orange-500" /> Admission Criteria:
+                  <IoNewspaperOutline className="text-orange-500 mr-1" /> Admission Criteria:
                     <p>
                      {college.admission_criteria}
                     </p>
