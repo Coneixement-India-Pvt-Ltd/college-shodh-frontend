@@ -36,13 +36,15 @@ export default function Home() {
   const [startIndex, setStartIndex] = useState(0);
   const citiesPerPage = 5;
 
-  // bsc modal
   const [showModal, setShowModal] = useState(false);
+  const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
 
   const closeModal = () => setShowModal(false);
-  const openModal = () => setShowModal(true);
+  const openModal = (type) => {
+    setShowModal(true);
+    setSelectedType(type);
+  };
 
-  // cities per page 10
   const handleNext = () => {
     if (startIndex + citiesPerPage < cities.length) {
       setStartIndex(startIndex + citiesPerPage);
@@ -62,7 +64,7 @@ export default function Home() {
     const intervalId = setInterval(() => {
       setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
       setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
-    }, 2000); // Change background and option every 2 seconds
+    }, 2000); 
 
     return () => clearInterval(intervalId);
   }, []);
@@ -111,7 +113,7 @@ export default function Home() {
             </svg>
           </div>
         </div>
-        
+
         <div className="options-container absolute top-0 right-0 mt-24 mr-4 md:mr-36">
           {Options.map((option, index) => (
             <Link to={option.link} key={index}>
@@ -119,7 +121,9 @@ export default function Home() {
                 className={`option-item text-left text-lg md:text-3xl font-sans text-gray-800 mb-2 mr-72 ${
                   optionIndex === index ? "font-bold" : ""
                 }`}
-                onClick={option.text === "B. Sc" ? openModal : undefined}
+
+                onClick={(option.text === "B. Sc" || option.text === "BE/B. Tech") ? () => openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech") : undefined}
+
               >
                 {option.text}
               </div>
@@ -135,8 +139,12 @@ export default function Home() {
         <div className="mt-5 mb-5 flex flex-wrap justify-center gap-4">
           {Options.map((option, index) => (
             <Link to={option.link} key={index}>
-              <button className="h-28 w-52 bg-[#cbd5e1] border border-black rounded-lg flex flex-col items-center   
-              justify-center" onClick={option.text === "B. Sc" ? openModal : undefined}>
+              <button
+                className="h-28 w-52 bg-[#cbd5e1] border border-black rounded-lg flex flex-col items-center justify-center"
+
+                onClick={(option.text === "B. Sc" || option.text === "BE/B. Tech") ? () => openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech") : undefined}
+
+              >
                 <img
                   src="./science.png"
                   alt={option.text}
@@ -145,7 +153,6 @@ export default function Home() {
                 <span className="hover:underline text-gray-800 font-medium hover:text-orange-600 mt-2">
                   {option.text}
                 </span>
-                
               </button>
             </Link>
           ))}
@@ -220,12 +227,8 @@ export default function Home() {
           </svg>
         </button>
       </div>
-      {showModal && <MyModal closeModal={closeModal} />}
+
+      {showModal && <MyModal closeModal={closeModal} type={selectedType} />}
     </div>
   );
 }
-
-
-
-
-
