@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 //import State from './State';
 import Ranking from "./Ranking";
 
+// for card icons
 import { IoLocationOutline } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -14,6 +15,16 @@ import { PiStudentFill } from "react-icons/pi";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoNewspaperOutline } from "react-icons/io5";
 
+// modal
+import MyModal from "../Modals/BscModal";
+
+const Options = [
+  { text: "B. Arch", link: "#" },
+  { text: "B. Pharm", link: "#" },
+  { text: "BCA", link: "#" },
+  { text: "BE/B. Tech", link: "#" },
+  { text: "B. Sc", link: "#" },
+];
 
 function Colleges() {
   const [colleges, setColleges] = useState([]);
@@ -93,6 +104,18 @@ function Colleges() {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
+  // modal
+  const [showModal, setShowModal] = useState(false);
+  const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
+
+  const [optionIndex, setOptionIndex] = useState(0);
+
+  const closeModal = () => setShowModal(false);
+  const openModal = (type) => {
+    setShowModal(true);
+    setSelectedType(type);
+  };
+
   return (
     <>
       <div className="flex justify-evenly mt-5">
@@ -109,17 +132,20 @@ function Colleges() {
           />
           <SearchIcon className="absolute left-3 top-3 text-gray-400" />
         </div>
-        {/* <p className="mt-3 text-blue-700 font-bold font-sans text-xl">Total Results: {filteredColleges.length}</p> */}
+        <p className="mt-3 text-blue-700 font-bold font-sans text-xl">
+          Total Results: {filteredColleges.length}
+        </p>
       </div>
 
-      <div className="mt-5 mb-5 btn-container">
+    {/* old buttons */}
+      {/* <div className="mt-5 mb-5 btn-container">
         <button
           className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
             selectedCourse === "B. Arch" ? "bg-blue-500 text-white" : ""
           }`}
           onClick={() => handleCourseChange("B. Arch")}
         >
-          <span className="hover:underline text-white font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium">
             B. Arch
           </span>
         </button>
@@ -130,7 +156,7 @@ function Colleges() {
           }`}
           onClick={() => handleCourseChange("B. Pharm")}
         >
-          <span className="hover:underline text-white font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium">
             B. Pharm
           </span>
         </button>
@@ -141,9 +167,7 @@ function Colleges() {
           }`}
           onClick={() => handleCourseChange("BCA")}
         >
-          <span className="hover:underline text-white font-medium hover:text-orange-600">
-            BCA
-          </span>
+          <span className="hover:underline text-white font-medium">BCA</span>
         </button>
 
         <button
@@ -152,7 +176,7 @@ function Colleges() {
           }`}
           onClick={() => handleCourseChange("Engineering")}
         >
-          <span className="hover:underline text-white font-medium hover:text-orange-600">
+          <span className="hover:underline text-white font-medium">
             BE/B. Tech
           </span>
         </button>
@@ -163,10 +187,28 @@ function Colleges() {
           }`}
           onClick={() => handleCourseChange("B. Sc")}
         >
-          <span className="hover:underline text-white font-medium hover:text-orange-600">
-            B. Sc
-          </span>
+          <span className="hover:underline text-white font-medium">B. Sc</span>
         </button>
+      </div> */}
+
+      <div className="mt-5 mb-5 btn-container">
+        {Options.map((option, index) => (
+          <Link to={option.link} key={index}>
+            <button
+              className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
+              onClick={
+                option.text === "B. Sc" || option.text === "BE/B. Tech"
+                  ? () =>
+                      openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
+                  : undefined
+              }
+            >
+              <span className="hover:underline text-white font-medium">
+                {option.text}
+              </span>
+            </button>
+          </Link>
+        ))}
       </div>
 
       {/* <div className="mt-5 mb-5 btn-container">
@@ -228,20 +270,22 @@ function Colleges() {
                   </p>
 
                   <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                  <FaRegBuilding className="text-orange-500 size-5 mr-2" /> Dept: {college.dept}
+                    <FaRegBuilding className="text-orange-500 size-5 mr-2" />{" "}
+                    Dept: {college.dept}
                   </p>
                   <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                  <PiStudentFill className="text-orange-500 size-5 mr-2" /> Student Intake: {college.intake}
+                    <PiStudentFill className="text-orange-500 size-5 mr-2" />{" "}
+                    Student Intake: {college.intake}
                   </p>
                   <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                  <FaPeopleGroup className="text-orange-500 size-5 mr-2" /> Faculty Count: {college.faculty}
+                    <FaPeopleGroup className="text-orange-500 size-5 mr-2" />{" "}
+                    Faculty Count: {college.faculty}
                   </p>
 
                   <div className="text-sm text-gray-600 mb-1 text-left flex items-center ">
-                  <IoNewspaperOutline className="text-orange-500 mr-1" /> Admission Criteria:
-                    <p>
-                     {college.admission_criteria}
-                    </p>
+                    <IoNewspaperOutline className="text-orange-500 mr-1" />{" "}
+                    Admission Criteria:
+                    <p>{college.admission_criteria}</p>
                   </div>
                 </div>
 
@@ -295,6 +339,7 @@ function Colleges() {
             </div>
           )}
         </div>
+        {showModal && <MyModal closeModal={closeModal} type={selectedType} />}
       </div>
     </>
   );
