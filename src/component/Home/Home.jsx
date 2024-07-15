@@ -64,7 +64,7 @@ export default function Home() {
     const intervalId = setInterval(() => {
       setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
       setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
-    }, 2000); 
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -121,15 +121,21 @@ export default function Home() {
                 className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-72 ${
                   optionIndex === index ? "font-bold text-orange-600 text-decoration-line: underline" : ""
                 }`}
-
-                onClick={(option.text === "B. Sc" || option.text === "BE/B. Tech") ? () => openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech") : undefined}
-
+                onClick={
+                  option.text === "B. Sc" || option.text === "BE/B. Tech"
+                    ? () =>
+                        openModal(
+                          option.text === "B. Sc" ? "BSc" : "BE/B. Tech"
+                        )
+                    : undefined
+                }
               >
                 {option.text}
               </div>
             </Link>
           ))}
         </div>
+        
       </div>
 
       <div className="text-center">
@@ -141,9 +147,14 @@ export default function Home() {
             <Link to={option.link} key={index}>
               <button
                 className="h-28 w-52 bg-[#cbd5e1] border border-black rounded-lg flex flex-col items-center justify-center"
-
-                onClick={(option.text === "B. Sc" || option.text === "BE/B. Tech") ? () => openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech") : undefined}
-
+                onClick={
+                  option.text === "B. Sc" || option.text === "BE/B. Tech"
+                    ? () =>
+                        openModal(
+                          option.text === "B. Sc" ? "BSc" : "BE/B. Tech"
+                        )
+                    : undefined
+                }
               >
                 <img
                   src="./science.png"
