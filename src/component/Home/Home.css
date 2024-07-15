@@ -112,6 +112,12 @@
     color: #000;
 }
 
+.option-item {
+    transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
+  }
+  
+  
+
 
 
 
