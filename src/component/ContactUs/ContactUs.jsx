@@ -8,7 +8,7 @@ function ContactUs() {
   return (
     <>
     <div className='border border-black-800 rounded-lg p-1 mt-5 mb-5 ml-10 mr-10 hover:shadow-lg'>
-      <h1 className="text-2xl font-serif font-bold text-gray-800 mt-10 mb-1">Contact Us</h1>
+      <h1 className="text-2xl font-serif font-bold text-gray-800 mt-10 mb-1">About Us</h1>
       <p className='text-gray-700'>Have a question? Need Some Help?</p>
       <p className='text-gray-700'>Any suggestion and feedback is welcome.</p>
       <p className='text-gray-700'>We would love to hear from you..</p>
