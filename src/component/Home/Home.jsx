@@ -118,8 +118,8 @@ export default function Home() {
           {Options.map((option, index) => (
             <Link to={option.link} key={index}>
               <div
-                className={`option-item text-left text-lg md:text-3xl font-sans text-gray-800 mb-2 mr-72 ${
-                  optionIndex === index ? "font-bold" : ""
+                className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-72 ${
+                  optionIndex === index ? "font-bold text-orange-600 text-decoration-line: underline" : ""
                 }`}
                 onClick={
                   option.text === "B. Sc" || option.text === "BE/B. Tech"
