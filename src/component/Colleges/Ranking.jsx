@@ -100,7 +100,7 @@ function Ranking({
     "Indore",
   ];
 
-  const nbaOptions = ["Accredited", "Not Accredited"];
+  const nbaOptions = ["Accredited"];
 
   const formControlLabelStyle = {
     display: "flex",

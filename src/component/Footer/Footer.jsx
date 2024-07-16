@@ -32,7 +32,7 @@ export default function Footer() {
                     to="#"
                     className="hover:text-orange-700 hover:underline"
                   >
-                    NIT,Agartala
+                    NIT, Agartala
                   </Link>
                 </li>
                 <li className="mb-4">
@@ -40,7 +40,7 @@ export default function Footer() {
                     to="#"
                     className="hover:text-orange-700 hover:underline"
                   >
-                    NIT,Trichy
+                    NIT, Trichy
                   </Link>
                 </li>
                 <li className="mb-4">
@@ -48,7 +48,7 @@ export default function Footer() {
                     to="#"
                     className="hover:text-orange-700 hover:underline"
                   >
-                    NIT,Warangal
+                    NIT, Warangal
                   </Link>
                 </li>
                 <li className="mb-4">
@@ -56,7 +56,7 @@ export default function Footer() {
                     to="#"
                     className="hover:text-orange-700 hover:underline"
                   >
-                    NIT,Calicut
+                    NIT, Calicut
                   </Link>
                 </li>
               </ul>

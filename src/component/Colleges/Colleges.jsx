@@ -127,63 +127,12 @@ function Colleges() {
           />
           <SearchIcon className="absolute left-3 top-3 text-gray-400" />
         </div>
-        <p className="mt-3 text-blue-700 font-bold font-sans text-xl">Total Colleges Found: {filteredColleges.length}</p>
+        <p className="mt-3 text-blue-700 font-bold font-sans text-xl">
+          Total Colleges Found: {filteredColleges.length}
+        </p>
       </div>
 
-    {/* old buttons */}
-      {/* <div className="mt-5 mb-5 btn-container">
-        <button
-          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
-            selectedCourse === "B. Arch" ? "bg-blue-500 text-white" : ""
-          }`}
-          onClick={() => handleCourseChange("B. Arch")}
-        >
-          <span className="hover:underline text-white font-medium">
-            B. Arch
-          </span>
-        </button>
-
-        <button
-          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
-            selectedCourse === "B. Pharm" ? "bg-blue-500 text-white" : ""
-          }`}
-          onClick={() => handleCourseChange("B. Pharm")}
-        >
-          <span className="hover:underline text-white font-medium">
-            B. Pharm
-          </span>
-        </button>
-
-        <button
-          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
-            selectedCourse === "BCA" ? "bg-blue-500 text-white" : ""
-          }`}
-          onClick={() => handleCourseChange("BCA")}
-        >
-          <span className="hover:underline text-white font-medium">BCA</span>
-        </button>
-
-        <button
-          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
-            selectedCourse === "Engineering" ? "bg-blue-500 text-white" : ""
-          }`}
-          onClick={() => handleCourseChange("Engineering")}
-        >
-          <span className="hover:underline text-white font-medium">
-            BE/B. Tech
-          </span>
-        </button>
-
-        <button
-          className={`h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg ${
-            selectedCourse === "B. Sc" ? "bg-blue-500 text-white" : ""
-          }`}
-          onClick={() => handleCourseChange("B. Sc")}
-        >
-          <span className="hover:underline text-white font-medium">B. Sc</span>
-        </button>
-      </div> */}
-
+      {/* buttons */}
       <div className="mt-5 mb-5 btn-container">
         {Options.map((option, index) => (
           <Link to={option.link} key={index}>
@@ -204,6 +153,8 @@ function Colleges() {
         ))}
       </div>
 
+      <h1 className="font-bold text-gray-500 font-mono">Explore your passion in ...</h1>
+
       <div className="flex justify-between">
         <div className="w-1/4 ml-4 mt-4">
           <Ranking
@@ -214,6 +165,8 @@ function Colleges() {
             onStateChange={handleStateChange}
           />
         </div>
+
+        
 
         <div className="w-full pl-10 flex flex-col mt-3 items-center">
           {displayedColleges.map((college) => (
@@ -232,13 +185,14 @@ function Colleges() {
                   "
                   >
                     <IoLocationOutline className="text-orange-500 size-5 mr-1" />
-                    <i> {college.address} </i>
-                    {/* {college.university} */}
+                    <i> {college.address} </i> 
+                    {/* &nbsp;
+                    {college.university} */}
                   </p>
 
                   <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
                     <FaRegBuilding className="text-orange-500 size-5 mr-2" />{" "}
-                    Dept: {college.dept}
+                    <b> Dept: {college.dept} </b>
                   </p>
                   <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
                     <PiStudentFill className="text-orange-500 size-5 mr-2" />{" "}
@@ -257,13 +211,13 @@ function Colleges() {
                 </div>
 
                 <div className="mt-7">
-                  <p className="text-sm text-gray-600 mb-1 text-left">
+                  <p className="text-sm text-blue-400 font-bold mb-1 text-left">
                     NIRF Rank: {college.nirf}
                   </p>
-                  <p className="text-sm text-gray-600 mb-1 text-left">
+                  <p className="text-sm text-blue-400 font-bold mb-1 text-left">
                     NBA: {college.nba}
                   </p>
-                  <p className="text-sm text-gray-600 mb-1 text-left">
+                  <p className="text-sm text-blue-400 font-bold mb-1 text-left">
                     NAAC: {college.naac}
                   </p>
                 </div>

@@ -9,6 +9,7 @@ import Blogs from './component/Blogs/Blogs.jsx'
 import Colleges from './component/Colleges/Colleges.jsx'
 import Programs from './component/Programs/Programs.jsx'
 import ContactUs from './component/ContactUs/ContactUs.jsx'
+import AboutUs from './component/AboutUs/AboutUs.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="colleges" element={<Colleges />} />
       <Route path="programs" element={<Programs />} />
       <Route path="contact" element={<ContactUs />} />
+      <Route path="about" element={<AboutUs />} />
     </Route>
   )
 )
