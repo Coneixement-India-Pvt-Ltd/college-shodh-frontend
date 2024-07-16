@@ -8,7 +8,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   }
 
   return (
-    <div className="flex justify-between w-full items-center mt-4 mb-4">
+    <div className="flex justify-between w-full pl-10 items-center mt-4 mb-4">
       <div className="flex-1 text-left ml-5">
         <button
           className={`p-2 rounded ${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white'}`}

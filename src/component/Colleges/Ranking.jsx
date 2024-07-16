@@ -12,10 +12,12 @@ function Ranking({
   sortOrder,
   handleSortChange,
   onStateChange,
+  onNbaFilter,
 }) {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [nirfRanking, setNirfRanking] = useState([0, 200]);
+  const [nbaAccreditation, setNbaAccreditation] = useState("");
 
   const handleStateChange = (event) => {
     setSelectedState(event.target.value);
@@ -30,6 +32,11 @@ function Ranking({
   const handleCityChange = (event) => {
     setSelectedCity(event.target.value);
     onStateChange(event.target.value);
+  };
+
+  const handleNbaChange = (event) => {
+    setNbaAccreditation(event.target.value);
+    onNbaFilter(event.target.value);
   };
 
   const naacOptions = [
@@ -92,6 +99,8 @@ function Ranking({
     "Kolkata",
     "Indore",
   ];
+
+  const nbaOptions = ["Accredited", "Not Accredited"];
 
   const formControlLabelStyle = {
     display: "flex",
@@ -190,6 +199,30 @@ function Ranking({
           step={1}
         />
       </Grid>
+
+      <Grid item className="Inner-Topic">
+        <hr />
+        <h2 className="font-bold mb-2 sub-topic">NBA Accreditation</h2>
+        <hr/>
+      </Grid>
+      <div className="scrollable-container">
+        {nbaOptions.map((option) => (
+          <Grid item key={option}>
+            <FormControlLabel className="Check-Box p-0"
+
+              control={
+                <Checkbox
+                  checked={nbaAccreditation === option}
+                  onChange={handleNbaChange}
+                  value={option}
+                />
+              }
+              label={option}
+              style={formControlLabelStyle}
+            />
+          </Grid>
+        ))}
+      </div>
     </Grid>
   );
 }
