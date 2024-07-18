@@ -119,7 +119,9 @@ export default function Home() {
             <Link to={option.link} key={index}>
               <div
                 className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-72 ${
-                  optionIndex === index ? "font-bold text-orange-600 text-decoration-line: underline" : ""
+                  optionIndex === index
+                    ? "font-bold text-orange-600 text-decoration-line: underline"
+                    : ""
                 }`}
                 onClick={
                   option.text === "B. Sc" || option.text === "BE/B. Tech"
@@ -135,18 +137,24 @@ export default function Home() {
             </Link>
           ))}
         </div>
-        
       </div>
 
-      <div className="text-center">
-        <p className="text-sm text-gray-800 mt-5">
-          Discover Bachelor's Program in Science and Engineering
-        </p>
+      <div className="text-center pb-8">
+        <div>
+          <p className="text-2xl font-mono p-4 mt-4 text-gray-800 bg-neutral-200">
+            Discover Bachelor's Program in Science and Engineering
+          </p>
+        </div>
+
+        <div className="text-left ml-32 mt-8">
+          <p className="font-bold text-xl">Explore Programs</p>
+        </div>
+
         <div className="mt-5 mb-5 flex flex-wrap justify-center gap-4">
           {Options.map((option, index) => (
             <Link to={option.link} key={index}>
               <button
-                className="h-28 w-52 bg-[#cbd5e1] border border-black rounded-lg flex flex-col items-center justify-center"
+                className="h-28 w-52 bg-blue-200 border border-black rounded-lg flex flex-col items-center justify-center hover:drop-shadow-2xl transition-all"
                 onClick={
                   option.text === "B. Sc" || option.text === "BE/B. Tech"
                     ? () =>
@@ -170,8 +178,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="text-center">
-        <p className="font-bold">Top Cities</p>
+      <hr />
+
+      <div className="text-left ml-32 mt-8">
+        <p className="font-bold text-xl">Top Cities</p>
       </div>
 
       <div className="flex justify-center mb-4">
