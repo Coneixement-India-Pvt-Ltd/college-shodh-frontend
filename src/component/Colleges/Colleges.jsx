@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import Ranking from "./Ranking";
 import Pagination from "./Pagination"; // Import the Pagination component
+import ClipLoader from "react-spinners/ClipLoader"; // Import ClipLoader for the spinner
 
 // for card icons
 import { IoLocationOutline } from "react-icons/io5";
@@ -34,6 +35,7 @@ function Colleges() {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true); // Added loading state
   const collegesPerPage = 10;
 
   useEffect(() => {
@@ -41,9 +43,11 @@ function Colleges() {
       .get("https://college-shodh-backend.onrender.com/api/courses")
       .then((response) => {
         setColleges(response.data);
+        setLoading(false); // Set loading to false after data is fetched
       })
       .catch((error) => {
         console.error(error);
+        setLoading(false); // Ensure loading is false even if there's an error
       });
   }, []);
 
@@ -111,6 +115,12 @@ function Colleges() {
     setSelectedType(type);
   };
 
+  const override = {
+    display: "block",
+    margin: "0 auto",
+    borderWidth: "5px" // Adjust the border width to make the ring thicker
+  };
+
   return (
     <>
       <div className="flex justify-evenly mt-5">
@@ -166,85 +176,94 @@ function Colleges() {
           />
         </div>
 
-        
-
         <div className="w-full pl-10 flex flex-col mt-3 items-center">
-          {displayedColleges.map((college) => (
-            <div
-              key={college._id}
-              className="border-b border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-32 ml-20 hover:shadow-2xl transition-shadow "
-            >
-              <h1 className="text-xl font-bold text-gray-900 text-left">
-                {college.college_name}
-              </h1>
+          {loading ? (
+            <div className="flex justify-center items-center h-full w-full">
+              <ClipLoader 
+                size={100} 
+                color={"#123abc"} 
+                loading={loading}
+                cssOverride={override}
+               />
+            </div>
+          ) : (
+            displayedColleges.map((college) => (
+              <div
+                key={college._id}
+                className="border-b border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-32 ml-20 hover:shadow-2xl transition-shadow "
+              >
+                <h1 className="text-xl font-bold text-gray-900 text-left">
+                  {college.college_name}
+                </h1>
 
-              <div className="flex flex-wrap">
-                <div className="w-1/2">
-                  <p
-                    className="text-sm text-gray-600 mb-2 text-left flex items-center
-                  "
-                  >
-                    <IoLocationOutline className="text-orange-500 size-5 mr-1" />
-                    <i> {college.address} </i> 
-                    {/* &nbsp;
-                    {college.university} */}
-                  </p>
+                <div className="flex flex-wrap">
+                  <div className="w-1/2">
+                    <p
+                      className="text-sm text-gray-600 mb-2 text-left flex items-center
+                    "
+                    >
+                      <IoLocationOutline className="text-orange-500 size-5 mr-1" />
+                      <i> {college.address} </i> 
+                      {/* &nbsp;
+                      {college.university} */}
+                    </p>
 
-                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                    <FaRegBuilding className="text-orange-500 size-5 mr-2" />{" "}
-                    <b> Dept: {college.dept} </b>
-                  </p>
-                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                    <PiStudentFill className="text-orange-500 size-5 mr-2" />{" "}
-                    Student Intake: {college.intake}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                    <FaPeopleGroup className="text-orange-500 size-5 mr-2" />{" "}
-                    Faculty Count: {college.faculty}
-                  </p>
+                    <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                      <FaRegBuilding className="text-orange-500 size-5 mr-2" />{" "}
+                      <b> Dept: {college.dept} </b>
+                    </p>
+                    <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                      <PiStudentFill className="text-orange-500 size-5 mr-2" />{" "}
+                      Student Intake: {college.intake}
+                    </p>
+                    <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                      <FaPeopleGroup className="text-orange-500 size-5 mr-2" />{" "}
+                      Faculty Count: {college.faculty}
+                    </p>
 
-                  <div className="text-sm text-gray-600 mb-1 text-left flex items-center ">
-                    <IoNewspaperOutline className="text-orange-500 mr-1" />{" "}
-                    Admission Criteria:
-                    <p>{college.admission_criteria}</p>
+                    <div className="text-sm text-gray-600 mb-1 text-left flex items-center ">
+                      <IoNewspaperOutline className="text-orange-500 mr-1" />{" "}
+                      Admission Criteria:
+                      <p>{college.admission_criteria}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-7">
+                    <p className="text-sm text-blue-400 font-bold mb-1 text-left">
+                      NIRF Rank: {college.nirf}
+                    </p>
+                    <p className="text-sm text-blue-400 font-bold mb-1 text-left">
+                      NBA: {college.nba}
+                    </p>
+                    <p className="text-sm text-blue-400 font-bold mb-1 text-left">
+                      NAAC: {college.naac}
+                    </p>
+                  </div>
+
+                  <hr className="w-full mb-2" />
+
+                  <div>
+                    <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                      <FaPhoneAlt className="mr-2 text-orange-400 size-4" />{" "}
+                      {college.contact}
+                    </p>
+                    <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
+                      <MdEmail className="mr-2 text-orange-400 size-5" />{" "}
+                      {college.email}
+                    </p>
+                  </div>
+
+                  <div className="flex justify-end mt-2 ml-auto mb-1">
+                    <Link to={college.website}>
+                      <Button variant="contained" className="text-blue-800">
+                        Know more
+                      </Button>
+                    </Link>
                   </div>
                 </div>
-
-                <div className="mt-7">
-                  <p className="text-sm text-blue-400 font-bold mb-1 text-left">
-                    NIRF Rank: {college.nirf}
-                  </p>
-                  <p className="text-sm text-blue-400 font-bold mb-1 text-left">
-                    NBA: {college.nba}
-                  </p>
-                  <p className="text-sm text-blue-400 font-bold mb-1 text-left">
-                    NAAC: {college.naac}
-                  </p>
-                </div>
-
-                <hr className="w-full mb-2" />
-
-                <div>
-                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                    <FaPhoneAlt className="mr-2 text-orange-400 size-4" />{" "}
-                    {college.contact}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-1 text-left flex items-center">
-                    <MdEmail className="mr-2 text-orange-400 size-5" />{" "}
-                    {college.email}
-                  </p>
-                </div>
-
-                <div className="flex justify-end mt-2 ml-auto mb-1">
-                  <Link to={college.website}>
-                    <Button variant="contained" className="text-blue-800">
-                      Know more
-                    </Button>
-                  </Link>
-                </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
 
           <Pagination
             currentPage={currentPage}
@@ -259,3 +278,4 @@ function Colleges() {
 }
 
 export default Colleges;
+
