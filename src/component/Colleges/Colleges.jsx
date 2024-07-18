@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import Ranking from "./Ranking";
 import Pagination from "./Pagination"; // Import the Pagination component
-import ClipLoader from "react-spinners/ClipLoader"; // Import ClipLoader for the spinner
+import ClipLoader from "react-spinners/ClipLoader"; 
 
 // for card icons
 import { IoLocationOutline } from "react-icons/io5";
@@ -124,9 +124,9 @@ function Colleges() {
   return (
     <>
       <div className="flex justify-evenly mt-5">
-        <h2 className="text-3xl font-sans font-bold text-black-700 mt-2">
+        {/* <h2 className="text-3xl font-sans font-bold text-black-700 mt-2">
           Follow Your Passion
-        </h2>
+        </h2> */}
         <div className="relative">
           <input
             type="text"
@@ -163,7 +163,7 @@ function Colleges() {
         ))}
       </div>
 
-      <h1 className="font-bold text-gray-500 font-mono">Explore your passion in ...</h1>
+      <h1 className="font-bold text-gray-500 font-mono">Following Your Passion in ...</h1>
 
       <div className="flex justify-between">
         <div className="w-1/4 ml-4 mt-4">
