@@ -76,7 +76,7 @@ export default function Home() {
     <div>
       <div
         id="image"
-        className="h-96 flex items-start bg-cover relative"
+        className="h-96 flex items-start bg-cover relative transition-all"
         style={{ backgroundImage: `url(${BackgroundImages[bgIndex]})` }}
       >
         <div className="mt-12 md:mt-24 ml-4 md:ml-24">
