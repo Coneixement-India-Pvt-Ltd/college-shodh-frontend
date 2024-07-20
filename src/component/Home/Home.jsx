@@ -67,7 +67,7 @@ export default function Home() {
     const intervalId = setInterval(() => {
       setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
       setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
-    }, 6000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -82,15 +82,20 @@ export default function Home() {
         <div className="mt-12 md:mt-24 ml-4 md:ml-24">
           <p
             id="passion"
-            className="text-2xl md:text-3xl font-sans font-bold text-gray-800 mb-2 md:mb-3 mt-6 md:mt-6"
+            className="s text-gray-800 mb-2 md:mb-3 mt-6 md:mt-6"
           >
-            FOLLOW YOUR PASSION
+            <div className="container">
+              <div className="text">
+              <span className="text-white">FOLLOW YOUR </span><span className="text-orange-600">PASSION</span>  
+              </div>
+            </div>
+            
           </p>
           <p
             id="stem"
             className="text-base md:text-lg text-gray-800 mb-3 md:mb-5"
           >
-            Science Technology Engineering Mathematics
+            <span className="text-white">Science Technology Engineering Mathematics</span>  
           </p>
           <div className="relative mb-3 md:mb-6">
             <input
