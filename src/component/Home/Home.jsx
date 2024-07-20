@@ -67,7 +67,7 @@ export default function Home() {
     const intervalId = setInterval(() => {
       setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
       setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
-    }, 2000);
+    }, 6000);
 
     return () => clearInterval(intervalId);
   }, []);
