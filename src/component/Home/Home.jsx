@@ -4,11 +4,14 @@ import MyModal from "../Modals/BscModal";
 import "./Home.css";
 
 const BackgroundImages = [
-  "./background1.jpg",
-  "./background3.jpg",
-  "./background4.jpg",
-  "./background.jpg",
-  "./background3.jpg",
+  // "./background1.jpg",
+  // "./background3.jpg",
+  // "./background4.jpg",
+  // "./background.jpg",
+  // "./background3.jpg",
+  "./bg1.jpg",
+  "./bg2.jpg",
+  "./bg3.jpg",
 ];
 
 const Options = [
