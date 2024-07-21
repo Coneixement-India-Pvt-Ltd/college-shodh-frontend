@@ -118,7 +118,8 @@ function Colleges() {
   const override = {
     display: "block",
     margin: "0 auto",
-    borderWidth: "8px" // Adjust the border width to make the ring thicker
+    borderWidth: "8px", // Adjust the border width to make the ring thicker
+    marginTop:"-300px",
   };
 
   return (
