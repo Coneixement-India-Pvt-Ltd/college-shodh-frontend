@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import Ranking from "./Ranking";
 import Pagination from "./Pagination"; // Import the Pagination component
-import ClipLoader from "react-spinners/ClipLoader"; 
+import HashLoader from "react-spinners/HashLoader"; 
 
 // for card icons
 import { IoLocationOutline } from "react-icons/io5";
@@ -176,10 +176,10 @@ function Colleges() {
           />
         </div>
 
-        <div className="w-full pl-10 flex flex-col mt-3 items-center h-screen overflow-auto">
+        <div className="w-full pl-10 flex flex-col mt-3 items-center">
           {loading ? (
             <div className="flex justify-center items-center h-full w-full">
-              <ClipLoader 
+              <HashLoader 
                 size={100} 
                 color={"orange"} 
                 loading={loading}
