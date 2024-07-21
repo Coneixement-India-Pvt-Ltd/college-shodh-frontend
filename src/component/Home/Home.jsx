@@ -15,11 +15,11 @@ const BackgroundImages = [
 ];
 
 const Options = [
-  { text: "B. Arch", link: "#" },
-  { text: "B. Pharm", link: "#" },
-  { text: "BCA", link: "#" },
-  { text: "BE/B. Tech", link: "#" },
-  { text: "B. Sc", link: "#" },
+  { text: "B. Arch", img:"./agri.png", link: "#"  },
+  { text: "B. Pharm", img:"./Pharma.png", link: "#" },
+  { text: "BCA", img:"./BCA.png", link: "#" },
+  { text: "BE/B. Tech", img:"./Btech.png", link: "#" },
+  { text: "B. Sc", img:"./BSC.png", link: "#" },
 ];
 
 const cities = [
@@ -162,7 +162,7 @@ export default function Home() {
           {Options.map((option, index) => (
             <Link to={option.link} key={index}>
               <button
-                className="h-28 w-52 bg-blue-200 border border-black rounded-lg flex flex-col items-center justify-center hover:drop-shadow-2xl transition-all"
+                className="h-28 w-52 bg-gray- border border-black rounded-lg flex flex-col items-center justify-center hover:drop-shadow-2xl transition-all"
                 onClick={
                   option.text === "B. Sc" || option.text === "BE/B. Tech"
                     ? () =>
@@ -173,7 +173,7 @@ export default function Home() {
                 }
               >
                 <img
-                  src="./science.png"
+                  src={option.img}
                   alt={option.text}
                   className="h-16 rounded-lg"
                 />

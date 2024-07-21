@@ -72,27 +72,27 @@ const MyModal = ({ closeModal, type }) => {
   }, []);
 
   const bscCourses = [
-    { name: "Physics", img: "./demoImg.png" },
-    { name: "Chemistry", img: "./demoImg.png" },
-    { name: "Biology", img: "./demoImg.png" },
-    { name: "Mathematics", img: "./demoImg.png" },
+    { name: "Physics", img: "./Phy.png" },
+    { name: "Chemistry", img: "./chemistry.png" },
+    { name: "Biology", img: "./biology.png" },
+    { name: "Mathematics", img: "./maths.png" },
     { name: "Microbiology", img: "./demoImg.png" },
-    { name: "Nursing", img: "./demoImg.png" },
-    { name: "Home Science", img: "./demoImg.png" },
-    { name: "Bio Technology", img: "./demoImg.png" },
-    { name: "Environmental Science", img: "./demoImg.png" },
-    { name: "Agriculture", img: "./demoImg.png" },
+    { name: "Nursing", img: "./Nursing.png" },
+    { name: "Home Science", img: "./HomeScience.png" },
+    { name: "Bio Technology", img: "./technology.png" },
+    { name: "Environmental Science", img: "./Enviromental.png" },
+    { name: "Agriculture", img: "./agriculture.png" },
   ];
 
   const beCourses = [
-    { name: "Computer Science", img: "./demoImg.png" },
-    { name: "Electrical Engineering", img: "./demoImg.png" },
-    { name: "Mechanical Engineering", img: "./demoImg.png" },
-    { name: "Civil Engineering", img: "./demoImg.png" },
-    { name: "Chemical Engineering", img: "./demoImg.png" },
-    { name: "Aerospace Engineering", img: "./demoImg.png" },
-    { name: "Biomedical Engineering", img: "./demoImg.png" },
-    { name: "Environmental Engineering", img: "./demoImg.png" },
+    { name: "Computer Science", img: "./computer-science.png" },
+    { name: "Electrical Engineering", img: "./Electrical.png" },
+    { name: "Mechanical Engineering", img: "./Mechanical.png" },
+    { name: "Civil Engineering", img: "./Civil.png" },
+    { name: "Chemical Engineering", img: "./chemistry.png" },
+    { name: "Aerospace Engineering", img: "./Aerospace.png" },
+    { name: "Biomedical Engineering", img: "./microBio.png" },
+    { name: "Environmental Engineering", img: "./Enviromental.png" },
   ];
 
   const courses = type === "BSc" ? bscCourses : beCourses;
@@ -120,11 +120,11 @@ const MyModal = ({ closeModal, type }) => {
     <>
       <div className="modal-wrapper" onClick={closeModal}></div>
       <div className="modal-container">
-        <h1>{type === "BSc" ? "B. Sc Courses" : "BE/B. Tech Courses"}</h1>
+        <h1 className="font-mono">{type === "BSc" ? "B. Sc Courses" : "BE/B. Tech Courses"}</h1>
         {currentCourses.map((course, index) => (
           <button className="model-btn" onClick={closeModal} key={index}>
             <img src={course.img} alt={course.name} />
-            <span>{course.name}</span>
+            <span className="font-normal">{course.name}</span>
           </button>
         ))}
         <div className="pagination">
