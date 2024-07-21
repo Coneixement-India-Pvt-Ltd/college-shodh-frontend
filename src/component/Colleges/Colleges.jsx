@@ -118,7 +118,7 @@ function Colleges() {
   const override = {
     display: "block",
     margin: "0 auto",
-    borderWidth: "5px" // Adjust the border width to make the ring thicker
+    borderWidth: "8px" // Adjust the border width to make the ring thicker
   };
 
   return (
@@ -166,7 +166,7 @@ function Colleges() {
       <h1 className="font-bold text-gray-500 font-mono">Following Your Passion in ...</h1>
 
       <div className="flex justify-between">
-        <div className="w-1/4 ml-4 mt-4">
+        <div className="w-1/4 ml-4 mt-4 mb-4">
           <Ranking
             filterNaac={filterNaac}
             handleNaacFilter={handleNaacFilter}
@@ -176,12 +176,12 @@ function Colleges() {
           />
         </div>
 
-        <div className="w-full pl-10 flex flex-col mt-3 items-center">
+        <div className="w-full pl-10 flex flex-col mt-3 items-center h-screen overflow-auto">
           {loading ? (
             <div className="flex justify-center items-center h-full w-full">
               <ClipLoader 
                 size={100} 
-                color={"#123abc"} 
+                color={"orange"} 
                 loading={loading}
                 cssOverride={override}
                />
