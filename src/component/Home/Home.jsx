@@ -4,22 +4,17 @@ import MyModal from "../Modals/BscModal";
 import "./Home.css";
 
 const BackgroundImages = [
-  // "./background1.jpg",
-  // "./background3.jpg",
-  // "./background4.jpg",
-  // "./background.jpg",
-  // "./background3.jpg",
   "./bg1.jpg",
   "./bg2.jpg",
   "./bg3.jpg",
 ];
 
 const Options = [
-  { text: "B. Arch", img:"./agri.png", link: "#"  },
-  { text: "B. Pharm", img:"./Pharma.png", link: "#" },
-  { text: "BCA", img:"./BCA.png", link: "#" },
-  { text: "BE/B. Tech", img:"./Btech.png", link: "#" },
-  { text: "B. Sc", img:"./BSC.png", link: "#" },
+  { text: "B. Arch", img: "./agri.png", link: "#" },
+  { text: "B. Pharm", img: "./Pharma.png", link: "#" },
+  { text: "BCA", img: "./BCA.png", link: "#" },
+  { text: "BE/B. Tech", img: "./Btech.png", link: "#" },
+  { text: "B. Sc", img: "./BSC.png", link: "#" },
 ];
 
 const cities = [
@@ -80,22 +75,21 @@ export default function Home() {
         style={{ backgroundImage: `url(${BackgroundImages[bgIndex]})` }}
       >
         <div className="mt-12 md:mt-24 ml-4 md:ml-24">
-          <p
-            id="passion"
-            className="s text-gray-800 mb-2 md:mb-3 mt-6 md:mt-6"
-          >
+          <p id="passion" className="s text-gray-800 mb-2 md:mb-3 mt-6 md:mt-6">
             <div className="container">
               <div className="text">
-              <span className="text-white">FOLLOW YOUR </span><span className="text-orange-600">PASSION</span>  
+                <span className="text-white">FOLLOW YOUR </span>
+                <span className="text-orange-600">PASSION</span>
               </div>
             </div>
-            
           </p>
           <p
             id="stem"
             className="text-base md:text-lg text-gray-800 mb-3 md:mb-5"
           >
-            <span className="text-white">Science Technology Engineering Mathematics</span>  
+            <span className="text-white">
+              Science Technology Engineering Mathematics (STEM)
+            </span>
           </p>
           <div className="relative mb-3 md:mb-6">
             <input
@@ -150,7 +144,7 @@ export default function Home() {
       <div className="text-center pb-8">
         <div>
           <p className="text-2xl font-mono p-4 mt-4 text-gray-800 bg-neutral-200">
-            Discover Bachelor's Program in Science and Engineering
+            Discover Bachelor's Program in Science, Technology, Engineering and Mathematics
           </p>
         </div>
 

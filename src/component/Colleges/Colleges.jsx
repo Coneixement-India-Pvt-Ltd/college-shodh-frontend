@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import Ranking from "./Ranking";
-import Pagination from "./Pagination"; // Import the Pagination component
+import Pagination from "./Pagination";
 import HashLoader from "react-spinners/HashLoader"; 
 
 // for card icons
