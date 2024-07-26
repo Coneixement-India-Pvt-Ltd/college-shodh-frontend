@@ -8,6 +8,11 @@ export default function Header() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <header className="shadow sticky z-50 top-0 transition-all">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -33,6 +38,12 @@ export default function Header() {
                 />
               </svg>
             </button>
+            <Link
+              to="https://entechonline.com/https://entechonline.com/"
+              className="hidden lg:block text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+            >
+              Explore Your Passion
+            </Link>
           </div>
           <div
             className={`lg:flex lg:w-auto lg:order-1 m-auto ${
@@ -43,12 +54,13 @@ export default function Header() {
             <ul className="flex flex-col mt-4 font-medium lg:flex-row sm:space-x-8 lg:mt-0">
               <li>
                 <NavLink
-                  to={"/"}
+                  to="/"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
                       isActive ? "text-orange-600" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0`
                   }
+                  onClick={closeMenu}
                 >
                   Home
                 </NavLink>
@@ -62,6 +74,7 @@ export default function Header() {
                       isActive ? "text-orange-600" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0`
                   }
+                  onClick={closeMenu}
                 >
                   About us
                 </NavLink>
@@ -69,12 +82,13 @@ export default function Header() {
 
               <li>
                 <NavLink
-                  to={"/colleges"}
+                  to="/colleges"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
                       isActive ? "text-orange-600" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0`
                   }
+                  onClick={closeMenu}
                 >
                   Rankings
                 </NavLink>
@@ -82,25 +96,13 @@ export default function Header() {
 
               <li>
                 <NavLink
-                  to={"https://entechonline.com/https://entechonline.com/"}
+                  to="/blogs"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
                       isActive ? "text-orange-600" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0`
                   }
-                >
-                  Explore Your Passion
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  to={"/blogs"}
-                  className={({ isActive }) =>
-                    `block py-2 pr-4 pl-3 duration-200 ${
-                      isActive ? "text-orange-600" : "text-gray-700"
-                    } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0`
-                  }
+                  onClick={closeMenu}
                 >
                   Blogs
                 </NavLink>
@@ -108,18 +110,27 @@ export default function Header() {
 
               <li>
                 <NavLink
-                  to={"/contact"}
+                  to="/contact"
                   className={({ isActive }) =>
                     `block py-2 pr-4 pl-3 duration-200 ${
                       isActive ? "text-orange-600" : "text-gray-700"
                     } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0`
                   }
+                  onClick={closeMenu}
                 >
                   Contact Us
                 </NavLink>
               </li>
 
-
+              <li className="block lg:hidden">
+                <Link
+                  to="https://entechonline.com/https://entechonline.com/"
+                  className="text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                  onClick={closeMenu}
+                >
+                  Explore Your Passion
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
