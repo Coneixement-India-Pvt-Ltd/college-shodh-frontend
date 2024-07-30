@@ -80,6 +80,21 @@ const MyModal = ({ closeModal, type }) => {
     { name: "Construction Engineering", img: "./Civil.png" },
     { name: "Electronics & Telecommunication Engineering", img: "./Civil.png" },
     { name: "RF & Microwave Engineering", img: "./Civil.png" },
+    { name: "Mining Engineering", img: "./Civil.png" },
+    { name: "Mineral Engineering", img: "./Civil.png" },
+    { name: "Mathematics & Computing", img: "./Civil.png" },
+    { name: "Dyestuff Technology", img: "./Civil.png" },
+    { name: "Pharmaceutical Chemistry and Technology", img: "./Civil.png" },
+    { name: "Food Engineering and Technology", img: "./Civil.png" },
+    { name: "Surface Coating Technology", img: "./Civil.png" },
+    { name: "Polymer Engineering and Technology", img: "./Civil.png" },
+    { name: "Oils, Oleochemicals and Surfactants Technology", img: "./Civil.png" },
+    { name: "Mining Machinery Engineering", img: "./Civil.png" },
+    { name: "Instrumentation and Control Engineering", img: "./Civil.png" },
+    { name: "Mechatronics Engineering", img: "./Civil.png" },
+    { name: "Metallurgical & Materials Engg.", img: "./Civil.png" },
+    { name: "Instrumentation and Control Engineering", img: "./Civil.png" },
+    
   ];
 
   const courses = type === "BSc" ? bscCourses : beCourses;
