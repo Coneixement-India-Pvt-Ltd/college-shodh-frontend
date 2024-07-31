@@ -25,12 +25,10 @@ const MyModal = ({ closeModal, type }) => {
     { name: "Economics", img: "./Phy.png" },
     { name: "Statistics", img: "./Phy.png" },
     { name: "Data Science", img: "./Phy.png" },
-    { name: "Data Science and Application", img: "./Phy.png" },
     { name: "Biological Science", img: "./Phy.png" },
     { name: "Electronics", img: "./Phy.png" },
     { name: "Applied Geology", img: "./Phy.png" },
-    { name: "Mathematics Scientific Computing", img: "./Phy.png" },
-    { name: "Exploration Geophysics", img: "./Phy.png" },
+    { name: "Physiotherapy", img: "./Phy.png" },
     { name: "Computer Science", img: "./Phy.png" },
     { name: "IT", img: "./Phy.png" },
     { name: "Forensic Science", img: "./Phy.png" },
@@ -46,8 +44,11 @@ const MyModal = ({ closeModal, type }) => {
     { name: "Bioinformatics", img: "./Phy.png" },
     { name: "Geography", img: "./Phy.png" },
     { name: "Hospitality", img: "./Phy.png" },
+    { name: "Exploration  Geophysics", img: "./Phy.png" },
     { name: "Medical Imaging Technology", img: "./Phy.png" },
-    { name: "Physiotherapy", img: "./Phy.png" },
+    { name: "Mathematics Scientific Computing", img: "./Phy.png" },
+    { name: "Data Science and Application", img: "./Phy.png" },
+    
   ];
 
   const beCourses = [
@@ -59,39 +60,39 @@ const MyModal = ({ closeModal, type }) => {
     { name: "Aerospace Engineering", img: "./Aerospace.png" },
     { name: "Biomedical Engineering", img: "./microBio.png" },
     { name: "Environmental Engineering", img: "./Enviromental.png" },
-    { name: "Computer Science & Engineering", img: "./Civil.png" },
     { name: "Electronic Engineering", img: "./Civil.png" },
     { name: "Agricultural Engineering", img: "./Civil.png" },
     { name: "Automobile Engineering", img: "./Civil.png" },
     { name: "Robotics Engineering", img: "./Civil.png" },
     { name: "Marine Engineering", img: "./Civil.png" },
     { name: "Petroleum Engineering", img: "./Civil.png" },
-    { name: "Manufacturing Engineering", img: "./Civil.png" },
-    { name: "Artificial Intelligence Engineering", img: "./Civil.png" },
-    { name: "Information Technology Engineering", img: "./Civil.png" },
+    { name: "Mining Engineering", img: "./Civil.png" },
+    { name: "Mineral Engineering", img: "./Civil.png" },
+    { name: "Dyestuff Technology", img: "./Civil.png" },
     { name: "Power Engineering", img: "./Civil.png" },
+    { name: "Mechatronics Engineering", img: "./Civil.png" },
     { name: "Structural Engineering", img: "./Civil.png" },
-    { name: "Food Technology Engineering", img: "./Civil.png" },
-    { name: "Cyber Security Engineering", img: "./Civil.png" },
+    { name: "Food Technology", img: "./Civil.png" },
+    { name: "Cyber Security", img: "./Civil.png" },
     { name: "Industrial Engineering", img: "./Civil.png" },
     { name: "Irrigation Engineering", img: "./Civil.png" },
     { name: "Biotechnology Engineering", img: "./Civil.png" },
     { name: "Aeronautical Engineering", img: "./Civil.png" },
     { name: "Construction Engineering", img: "./Civil.png" },
-    { name: "Electronics & Telecommunication Engineering", img: "./Civil.png" },
-    { name: "RF & Microwave Engineering", img: "./Civil.png" },
-    { name: "Mining Engineering", img: "./Civil.png" },
-    { name: "Mineral Engineering", img: "./Civil.png" },
     { name: "Mathematics & Computing", img: "./Civil.png" },
-    { name: "Dyestuff Technology", img: "./Civil.png" },
+    { name: "Manufacturing Engineering", img: "./Civil.png" },
+    { name: "Computer Science & Engineering", img: "./Civil.png" },
+    { name: "RF & Microwave Engineering", img: "./Civil.png" },
+    { name: "Artificial Intelligence Engineering", img: "./Civil.png" },
+    { name: "Information Technology Engineering", img: "./Civil.png" },
+    { name: "Electronics & Telecommunication", img: "./Civil.png" },
     { name: "Pharmaceutical Chemistry and Technology", img: "./Civil.png" },
     { name: "Food Engineering and Technology", img: "./Civil.png" },
     { name: "Surface Coating Technology", img: "./Civil.png" },
     { name: "Polymer Engineering and Technology", img: "./Civil.png" },
     { name: "Oils, Oleochemicals and Surfactants Technology", img: "./Civil.png" },
     { name: "Mining Machinery Engineering", img: "./Civil.png" },
-    { name: "Instrumentation and Control Engineering", img: "./Civil.png" },
-    { name: "Mechatronics Engineering", img: "./Civil.png" },
+    { name: "Instrumentation and Control Engineering", img: "./Civil.png" },  
     { name: "Metallurgical & Materials Engg.", img: "./Civil.png" },
     { name: "Instrumentation and Control Engineering", img: "./Civil.png" },
     
@@ -126,7 +127,7 @@ const MyModal = ({ closeModal, type }) => {
         {currentCourses.map((course, index) => (
           <button className="model-btn" onClick={closeModal} key={index}>
             <img src={course.img} alt={course.name} />
-            <span className="font-normal">{course.name}</span>
+            <span className="font-normal" >{course.name}</span>
           </button>
         ))}
         <div className="pagination">

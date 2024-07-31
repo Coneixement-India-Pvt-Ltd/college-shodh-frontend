@@ -8,7 +8,7 @@
 }
 
 .modal-container {
-    height: 28rem;
+    height: 32rem;
     width: 60rem;
     position: fixed;
     top: 50%;
@@ -27,12 +27,12 @@
 }
 
 .model-btn {
-    height: 7rem;
-    width: 11rem;
+    height: 8rem;
+    width: 12rem;
     border-width: 1px;
     border-radius: 0.5rem;
     cursor: pointer;
-    margin: 0.5rem; 
+    margin: 0.2rem; 
 }
 
 .model-btn:hover {
@@ -43,11 +43,12 @@
 }
 
 .model-btn img {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2rem;
+    width: 2rem;
     margin-left: 4rem;
     margin-bottom: 0.5rem;
 }
+
 
 .pagination {
     display: flex;
@@ -69,6 +70,7 @@
     cursor: not-allowed;
   }
 
+  
 
 @media (max-width: 768px) {
     .modal-container {
