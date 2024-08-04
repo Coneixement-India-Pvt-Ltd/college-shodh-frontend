@@ -1,5 +1,6 @@
 import React from "react";
 import BlogListing from "../BlogListing/BlogListing";
+import BlogCard from "../BlogCard/BlogCard";
 
 function Blogs() {
   return (
@@ -20,11 +21,11 @@ function Blogs() {
               </div>
 
               <div className="mt-4 flex flex-col gap-4 sm:mt-0 sm:flex-row sm:items-center">
-                <button
+                {/* <button
                   className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 bg-white px-5 py-3 text-gray-500 transition hover:text-gray-700 focus:outline-none focus:ring"
                   type="button"
                 >
-                  <span className="text-sm font-medium"> View Website </span>
+                  <span className="text-sm font-medium"> Search</span>
 
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +41,28 @@ function Blogs() {
                       d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                     />
                   </svg>
-                </button>
+                </button> */}
+                <input
+                type="text"
+                id="search"
+                placeholder="Search Blog"
+                className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-gray-200 bg-white px-5 py-3 text-gray-500 transition hover:text-gray-700 focus:outline-none focus:ring"
+              />
+              {/* <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="w-6 md:w-7 h-6 md:h-7 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                style={{ fontSize: "1.5em" }}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-4.35-4.35m2.85-3.65A7.5 7.5 0 1112 4.5a7.5 7.5 0 017.5 7.5z"
+                />
+              </svg> */}
 
                 <button
                   className="block rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring"
@@ -54,13 +76,15 @@ function Blogs() {
         </header>
       </div>
 
-      {/* <div className="mt-10 w-64 "> 
+      <div className="ml-32 mr-44 mb-10 mt-5"> 
 
-        <BlogListing/>
-        <BlogListing/>
+      <BlogCard/>
 
 
-      </div> */}
+
+      </div>
+
+      <hr />
 
       <div className="ml-32 mr-36 min-h-screen flex flex-col">
         <div className="mt-10 flex flex-row space-x-4 mb-10">
