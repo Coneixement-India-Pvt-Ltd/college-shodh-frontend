@@ -46,18 +46,18 @@ const BlogCard = () => {
             
         </div>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-4 mt-5">
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
-            <div className="h-16  bg-gray-200"></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
+            <div className="h-16  bg-gray-200 rounded-lg"><p className='p-4'>Topic</p></div>
             
         </div>
 

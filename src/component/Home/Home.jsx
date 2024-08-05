@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyModal from "../Modals/BscModal";
 import "./Home.css";
+import BlogListing from "../BlogListing/BlogListing";
 
 const BackgroundImages = ["./bg1.jpg", "./bg2.jpg", "./bg3.jpg"];
 
@@ -445,6 +446,24 @@ export default function Home() {
         </button>
       </div>
 
+       <hr />
+
+      <div className="ml-32 mr-36 min-h-screen flex flex-col">
+        <div className="mt-10 flex flex-row space-x-4 mb-10">
+          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
+            <BlogListing />
+          </div>
+          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
+            <BlogListing />
+          </div>
+          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
+            <BlogListing />
+          </div>
+          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
+            <BlogListing />
+          </div>
+        </div>
+      </div>
       {showModal && <MyModal closeModal={closeModal} type={selectedType} />}
     </div>
 
