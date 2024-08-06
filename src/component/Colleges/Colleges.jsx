@@ -5,7 +5,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import Ranking from "./Ranking";
 import Pagination from "./Pagination";
-import HashLoader from "react-spinners/HashLoader"; 
+import HashLoader from "react-spinners/HashLoader";
+import "./Colleges.css";
 
 // for card icons
 import { IoLocationOutline } from "react-icons/io5";
@@ -119,7 +120,7 @@ function Colleges() {
     display: "block",
     margin: "0 auto",
     borderWidth: "8px", // Adjust the border width to make the ring thicker
-    marginTop:"-300px",
+    marginTop: "-300px",
   };
 
   return (
@@ -164,7 +165,9 @@ function Colleges() {
         ))}
       </div>
 
-      <h1 className="font-bold text-gray-500 font-mono">Following Your Passion in ...</h1>
+      <h1 className="font-bold text-gray-500 font-mono">
+        Following Your Passion in ...
+      </h1>
 
       <div className="flex justify-between">
         <div className="w-1/4 ml-4 mt-4 mb-4">
@@ -180,18 +183,19 @@ function Colleges() {
         <div className="w-full pl-10 flex flex-col mt-3 items-center">
           {loading ? (
             <div className="flex justify-center items-center h-full w-full">
-              <HashLoader 
-                size={100} 
-                color={"orange"} 
+              <HashLoader
+                size={100}
+                color={"orange"}
                 loading={loading}
                 cssOverride={override}
-               />
+              />
             </div>
           ) : (
             displayedColleges.map((college) => (
               <div
+                id="college-card"
                 key={college._id}
-                className="border-b border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-32 ml-20 hover:shadow-2xl transition-shadow "
+                className="border-b border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-32 ml-20 hover:shadow-2xl transition-shadow"
               >
                 <h1 className="text-xl font-bold text-gray-900 text-left">
                   {college.college_name}
@@ -204,7 +208,7 @@ function Colleges() {
                     "
                     >
                       <IoLocationOutline className="text-orange-500 size-5 mr-1" />
-                      <i> {college.address} </i> 
+                      <i> {college.address} </i>
                       {/* &nbsp;
                       {college.university} */}
                     </p>
@@ -279,4 +283,3 @@ function Colleges() {
 }
 
 export default Colleges;
-
