@@ -21,11 +21,11 @@ import { IoNewspaperOutline } from "react-icons/io5";
 import MyModal from "../Modals/BscModal";
 
 const Options = [
-  { text: "B. Arch", link: "#" },
-  { text: "B. Pharm", link: "#" },
-  { text: "BCA", link: "#" },
-  { text: "BE/B. Tech", link: "#" },
-  { text: "B. Sc", link: "#" },
+  { text: "B. Arch", course: "Architecture" },
+  { text: "B. Pharm", course: "Pharmacy" },
+  { text: "BCA", course: "BCA" },
+  { text: "BE/B. Tech", course: "Engineering" },
+  { text: "B. Sc", course: "Science" },
 ];
 
 function Colleges() {
@@ -75,6 +75,7 @@ function Colleges() {
 
   const handleCourseChange = (course) => {
     setSelectedCourse(course);
+    setCurrentPage(1); // Reset to the first page when course changes
   };
 
   const filteredColleges = colleges.filter((college) => {
@@ -82,8 +83,8 @@ function Colleges() {
       ? college.address.toLowerCase().includes(selectedState.toLowerCase())
       : true;
     const isCourseMatch = selectedCourse
-      ? college.course &&
-        college.course.toLowerCase().includes(selectedCourse.toLowerCase())
+      ? college.dept &&
+        college.dept.toLowerCase().includes(selectedCourse.toLowerCase())
       : true;
     return (
       (search === "" ||
@@ -145,7 +146,7 @@ function Colleges() {
       </div>
 
       {/* buttons */}
-      <div className="mt-5 mb-5 btn-container">
+      {/* <div className="mt-5 mb-5 btn-container">
         {Options.map((option, index) => (
           <Link to={option.link} key={index}>
             <button
@@ -162,6 +163,26 @@ function Colleges() {
               </span>
             </button>
           </Link>
+        ))}
+      </div> */}
+
+      <div className="mt-5 mb-5 btn-container">
+        {Options.map((option, index) => (
+          <button
+            className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
+            key={index}
+            onClick={() => {
+              if (option.text === "B. Sc" || option.text === "BE/B. Tech") {
+                openModal(option.text);
+              } else {
+                handleCourseChange(option.course);
+              }
+            }}
+          >
+            <span className="hover:underline text-white font-medium">
+              {option.text}
+            </span>
+          </button>
         ))}
       </div>
 
