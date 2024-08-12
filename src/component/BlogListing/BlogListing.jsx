@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const BlogListing = () => {
   return (
@@ -11,7 +12,7 @@ const BlogListing = () => {
         />
 
         <div className="p-4 sm:p-6">
-          <a href="#">
+          <a href="/blogdetails">
             <h3 className="text-lg text-left font-medium text-gray-900">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h3>
@@ -80,8 +81,15 @@ const BlogListing = () => {
                   
                 {/* </dl> */}
               </a>
+              
 
               </div>
+              <Link to="/blogdetails" className="group mt-4 inline-flex items-center gap-1 text-sm font-medium text-blue-600">
+            Find out more
+            <span aria-hidden="true" className="block transition-all group-hover:ms-0.5 rtl:rotate-180">
+              &rarr;
+            </span>
+          </Link>
               </div>
         {/* </div> */}
       </article>

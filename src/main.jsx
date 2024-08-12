@@ -10,12 +10,14 @@ import Colleges from './component/Colleges/Colleges.jsx'
 import Programs from './component/Programs/Programs.jsx'
 import ContactUs from './component/ContactUs/ContactUs.jsx'
 import AboutUs from './component/AboutUs/AboutUs.jsx'
+import BlogDetails from './component/BlogDetails/BlogDetails.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="blogs" element={<Blogs />} />
+      <Route path="/blogdetails" element={<BlogDetails />} />
       <Route path="colleges" element={<Colleges />} />
       <Route path="programs" element={<Programs />} />
       <Route path="contact" element={<ContactUs />} />

@@ -76,13 +76,13 @@ function Blogs() {
         </header>
       </div>
 
-      <div className="ml-32 mr-44 mb-10 mt-5"> 
+      {/* <div className="ml-32 mr-44 mb-10 mt-5"> 
 
       <BlogCard/>
 
 
 
-      </div>
+      </div> */}
 
       <hr />
 
