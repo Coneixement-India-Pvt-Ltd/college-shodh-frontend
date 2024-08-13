@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyModal from "../Modals/BscModal";
 import "./Home.css";
-import BlogListing from "../BlogListing/BlogListing";
+import BlogListing from "../BlogPage/BlogListing/BlogListing";
 
 const BackgroundImages = ["./bg1.jpg", "./bg2.jpg", "./bg3.jpg"];
 
@@ -27,7 +27,7 @@ const cities = [
   { name: "Ahmedabad", img: "./kolkata.png" },
 ];
 
-export default function Home() {
+export default function Homepage() {
   const [startIndex, setStartIndex] = useState(0);
   const citiesPerPage = 5;
 

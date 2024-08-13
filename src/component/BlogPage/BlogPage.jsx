@@ -1,6 +1,6 @@
 import React from "react";
-import BlogListing from "../BlogListing/BlogListing";
-import BlogCard from "../BlogCard/BlogCard";
+import BlogListing from "./BlogListing/BlogListing";
+import BlogCard from "./BlogCard/BlogCard";
 
 function Blogs() {
   return (
