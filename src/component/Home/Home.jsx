@@ -27,7 +27,7 @@ const cities = [
   { name: "Ahmedabad", img: "./kolkata.png" },
 ];
 
-export default function Homepage() {
+export default function Home() {
   const [startIndex, setStartIndex] = useState(0);
   const citiesPerPage = 5;
 
