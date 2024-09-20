@@ -18,16 +18,18 @@ const TopCities = () => {
   };
 
   const cities = [
-    { name: "Kolkata", img: "./kolkata.png" },
-    { name: "Pune", img: "./pune.JPG" },
-    { name: "Bangalore", img: "./banglore.png" },
-    { name: "Mumbai", img: "./mumbai.png" },
-    { name: "Jaipur", img: "./jaipur.png" },
-    { name: "Gurgaon", img: "./kolkata.png" },
-    { name: "Delhi", img: "./kolkata.png" },
-    { name: "Chennai", img: "./kolkata.png" },
-    { name: "Hyderabad", img: "./kolkata.png" },
-    { name: "Ahmedabad", img: "./kolkata.png" },
+    { name: "Kolkata", img: "./cities/kolkata.png" },
+    { name: "Pune", img: "./cities/pune.JPG" },
+    { name: "Bangalore", img: "./cities/banglore.png" },
+    { name: "Mumbai", img: "./cities/mumbai.png" },
+    { name: "Jaipur", img: "./cities/jaipur.png" },
+    { name: "Gurgaon", img: "./cities/kolkata.png" },
+    { name: "Delhi", img: "./cities/kolkata.png" },
+    { name: "Chennai", img: "./cities/kolkata.png" },
+    { name: "Hyderabad", img: "./cities/kolkata.png" },
+    { name: "Ahmedabad", img: "./cities/kolkata.png" },
+    { name: "Ahmedabad", img: "./cities/kolkata.png" },
+    { name: "Ahmedabad", img: "./cities/kolkata.png" },
   ];
 
   return (

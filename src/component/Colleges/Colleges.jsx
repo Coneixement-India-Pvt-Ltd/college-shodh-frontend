@@ -18,7 +18,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { IoNewspaperOutline } from "react-icons/io5";
 
 // modal
-import MyModal from "../Modals/BscModal";
+import MyModal from "../Modals/Modal";
 
 const Options = [
   { text: "B. Arch", course: "Architecture" },
@@ -146,7 +146,7 @@ function Colleges() {
       </div>
 
       {/* buttons */}
-      {/* <div className="mt-5 mb-5 btn-container">
+      <div className="mt-5 mb-5 btn-container">
         {Options.map((option, index) => (
           <Link to={option.link} key={index}>
             <button
@@ -164,9 +164,9 @@ function Colleges() {
             </button>
           </Link>
         ))}
-      </div> */}
+      </div>
 
-      <div className="mt-5 mb-5 btn-container">
+      {/* <div className="mt-5 mb-5 btn-container">
         {Options.map((option, index) => (
           <button
             className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
@@ -184,7 +184,7 @@ function Colleges() {
             </span>
           </button>
         ))}
-      </div>
+      </div> */}
 
       <h1 className="font-bold text-gray-500 font-mono">
         Following Your Passion in ...

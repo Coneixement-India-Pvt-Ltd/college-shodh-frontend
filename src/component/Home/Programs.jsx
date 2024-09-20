@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import MyModal from "../Modals/Modal";
 import { Link } from "react-router-dom";
 
 const Options = [
-  { text: "B. Arch", img: "./agri.png", link: "#" },
-  { text: "B. Pharm", img: "./Pharma.png", link: "#" },
-  { text: "BCA", img: "./BCA.png", link: "#" },
-  { text: "BE/B. Tech", img: "./Btech.png", link: "#" },
-  { text: "B. Sc", img: "./BSC.png", link: "#" },
+  { text: "B. Arch", img: "./programs/barch.png", link: "#" },
+  { text: "B. Pharm", img: "./programs/bphram.png", link: "#" },
+  { text: "BCA", img: "./programs/bca.png", link: "#" },
+  { text: "BE/B. Tech", img: "./programs/be-btech.png", link: "#" },
+  { text: "B. Sc", img: "./programs/bsc.png", link: "#" },
 ];
 
 const Programs = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
+
+  const closeModal = () => setShowModal(false);
+  const openModal = (type) => {
+    setShowModal(true);
+    setSelectedType(type);
+  };
+
   return (
     <div className="text-center pb-8">
       <div>
@@ -27,7 +37,7 @@ const Programs = () => {
         {Options.map((option, index) => (
           <Link to={option.link} key={index}>
             <button
-              className="h-28 w-52 bg-gray-200 border border-black rounded-lg flex flex-col items-center justify-center hover:drop-shadow-2xl transition-all"
+              className="h-28 w-52 bg-gray-200 border border-black rounded-lg flex flex-col items-center justify-center hover:shadow-xl hover:bg-slate-300 transition-all"
               onClick={
                 option.text === "B. Sc" || option.text === "BE/B. Tech"
                   ? () =>
@@ -38,7 +48,7 @@ const Programs = () => {
               <img
                 src={option.img}
                 alt={option.text}
-                className="h-16 rounded-lg"
+                className="h-14 rounded-lg"
               />
               <span className="hover:underline text-gray-800 font-medium hover:text-orange-600 mt-2">
                 {option.text}
@@ -48,6 +58,7 @@ const Programs = () => {
         ))}
       </div>
       <hr />
+      {showModal && <MyModal closeModal={closeModal} type={selectedType} />}
     </div>
   );
 };

@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MyModal from "../Modals/BscModal";
+import MyModal from "../Modals/Modal";
 import "./Home.css";
-import BlogListing from "../BlogPage/BlogListing/BlogListing";
 
-const BackgroundImages = ["./bg1.jpg", "./bg2.jpg", "./bg3.jpg"];
+const BackgroundImages = ["./bg-images/bg1.jpg", "./bg-images/bg2.jpg", "./bg-images/bg3.jpg"];
 
 const Options = [
   { text: "B. Arch", img: "./agri.png", link: "#" },
@@ -14,23 +13,7 @@ const Options = [
   { text: "B. Sc", img: "./BSC.png", link: "#" },
 ];
 
-const cities = [
-  { name: "Kolkata", img: "./kolkata.png" },
-  { name: "Pune", img: "./pune.JPG" },
-  { name: "Bangalore", img: "./banglore.png" },
-  { name: "Mumbai", img: "./mumbai.png" },
-  { name: "Jaipur", img: "./jaipur.png" },
-  { name: "Gurgaon", img: "./kolkata.png" },
-  { name: "Delhi", img: "./kolkata.png" },
-  { name: "Chennai", img: "./kolkata.png" },
-  { name: "Hyderabad", img: "./kolkata.png" },
-  { name: "Ahmedabad", img: "./kolkata.png" },
-];
-
 export default function Home() {
-  const [startIndex, setStartIndex] = useState(0);
-  const citiesPerPage = 5;
-
   const [showModal, setShowModal] = useState(false);
   const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
 
@@ -38,18 +21,6 @@ export default function Home() {
   const openModal = (type) => {
     setShowModal(true);
     setSelectedType(type);
-  };
-
-  const handleNext = () => {
-    if (startIndex + citiesPerPage < cities.length) {
-      setStartIndex(startIndex + citiesPerPage);
-    }
-  };
-
-  const handlePrev = () => {
-    if (startIndex - citiesPerPage >= 0) {
-      setStartIndex(startIndex - citiesPerPage);
-    }
   };
 
   const [bgIndex, setBgIndex] = useState(0);
@@ -87,7 +58,6 @@ export default function Home() {
             <p id="stem" className="text-lg font-medium mb-4">
               Science Technology Engineering Mathematics (STEM)
             </p>
-
 
             <div className="relative mb-6">
               <input
@@ -136,143 +106,11 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-
           </div>
         </div>
       </div>
 
-      <div className="text-center pb-8">
-        <div>
-          <p className="text-2xl font-mono p-4 mt-4 text-gray-800 bg-neutral-200">
-            Discover Bachelor's Program in Science, Technology, Engineering and
-            Mathematics
-          </p>
-        </div>
-
-        <div className="text-left ml-32 mt-8">
-          <p className="font-bold text-xl">Explore Programs</p>
-        </div>
-
-        <div className="mt-5 mb-5 flex flex-wrap justify-center gap-4">
-          {Options.map((option, index) => (
-            <Link to={option.link} key={index}>
-              <button
-                className="h-28 w-52 bg-gray-200 border border-black rounded-lg flex flex-col items-center justify-center hover:drop-shadow-2xl transition-all"
-                onClick={
-                  option.text === "B. Sc" || option.text === "BE/B. Tech"
-                    ? () =>
-                        openModal(
-                          option.text === "B. Sc" ? "BSc" : "BE/B. Tech"
-                        )
-                    : undefined
-                }
-              >
-                <img
-                  src={option.img}
-                  alt={option.text}
-                  className="h-16 rounded-lg"
-                />
-                <span className="hover:underline text-gray-800 font-medium hover:text-orange-600 mt-2">
-                  {option.text}
-                </span>
-              </button>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      <hr />
-
-      <div className="text-left ml-32 mt-8">
-        <p className="font-bold text-xl">Top Cities</p>
-      </div>
-
-      <div className="flex justify-center mb-4">
-        <button
-          onClick={handlePrev}
-          disabled={startIndex === 0}
-          className={`arrow-button ${startIndex === 0 ? "disabled" : ""}`}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-
-        <div className="mb-8 mt-8 flex flex-wrap justify-center gap-4">
-          {cities
-            .slice(startIndex, startIndex + citiesPerPage)
-            .map((city, index) => (
-              <Link to="#" key={index}>
-                <button className="h-28 w-44 border border-black rounded-lg flex flex-col items-center justify-center">
-                  <img
-                    src={city.img}
-                    alt={city.name}
-                    className="h-16 rounded-lg"
-                  />
-                  <span className="hover:underline text-gray-800 font-medium hover:text-orange-600 mt-2">
-                    {city.name}
-                  </span>
-                </button>
-              </Link>
-            ))}
-        </div>
-
-        <button
-          onClick={handleNext}
-          disabled={startIndex + citiesPerPage >= cities.length}
-          className={`arrow-button ${
-            startIndex + citiesPerPage >= cities.length ? "disabled" : ""
-          }`}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
-
-       <hr />
-
-      <div className="ml-32 mr-36 min-h-screen flex flex-col">
-        <div className="mt-10 flex flex-row space-x-4 mb-10">
-          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
-            <BlogListing />
-          </div>
-          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
-            <BlogListing />
-          </div>
-          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
-            <BlogListing />
-          </div>
-          <div className="flex-shrink-0 w-72 h-40 bg-gray-200 rounded-md shadow-lg p-4">
-            <BlogListing />
-          </div>
-        </div>
-      </div>
       {showModal && <MyModal closeModal={closeModal} type={selectedType} />}
     </div>
-
-
   );
 }
