@@ -74,14 +74,14 @@ function Colleges() {
   };
 
   const handleCourseChange = (course) => {
-    setSelectedCourse(course);
+    setSelectedCourse(course.name);
     setCurrentPage(1); // Reset to the first page when course changes
   };
 
   const filteredColleges = colleges.filter((college) => {
     const isStateMatch = selectedState
       ? college.address.toLowerCase().includes(selectedState.toLowerCase())
-      : true;
+      : true;      
     const isCourseMatch = selectedCourse
       ? college.dept &&
         college.dept.toLowerCase().includes(selectedCourse.toLowerCase())
@@ -111,7 +111,12 @@ function Colleges() {
 
   const [optionIndex, setOptionIndex] = useState(0);
 
-  const closeModal = () => setShowModal(false);
+  const closeModal = (course) => {
+    setShowModal(false);
+    if (course) {
+      handleCourseChange(course);
+    }
+  }
   const openModal = (type) => {
     setShowModal(true);
     setSelectedType(type);
@@ -151,12 +156,15 @@ function Colleges() {
           <Link to={option.link} key={index}>
             <button
               className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
-              onClick={
-                option.text === "B. Sc" || option.text === "BE/B. Tech"
-                  ? () =>
-                      openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
-                  : undefined
+              onClick={ () => {
+                if(option.text === "B. Sc" || option.text === "BE/B. Tech"){
+                  openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
+                }
+                else{
+                  handleCourseChange({name:option.course});
+                }
               }
+            }
             >
               <span className="hover:underline text-white font-medium">
                 {option.text}
@@ -187,7 +195,7 @@ function Colleges() {
       </div> */}
 
       <h1 className="font-bold text-gray-500 font-mono">
-        Following Your Passion in ...
+        Following Your Passion in {selectedCourse}
       </h1>
 
       <div className="flex justify-between">

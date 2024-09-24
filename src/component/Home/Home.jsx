@@ -2,8 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyModal from "../Modals/Modal";
 import "./Home.css";
+import barch_image from "../../assets/barch.jpg"
+import bpharma from "../../assets/bpharma.jpg"
+import bca from "../../assets/bca.jpg"
+import bebtech from "../../assets/bebtech.jpg"
+import bsc from "../../assets/bsc.jpg"
 
-const BackgroundImages = ["./bg-images/bg1.jpg", "./bg-images/bg2.jpg", "./bg-images/bg3.jpg"];
+const BackgroundImages = [barch_image, bpharma, bca, bebtech];
 
 const Options = [
   { text: "B. Arch", img: "./agri.png", link: "#" },
@@ -39,7 +44,7 @@ export default function Home() {
     <div>
       <div
         id="image"
-        className="relative h-96 bg-cover bg-center"
+        className="relative h-96 bg-cover bg-center bg-[rgba(0,0,0,0.4)] bg-blend-darken"
         style={{ backgroundImage: `url(${BackgroundImages[bgIndex]})` }}
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>

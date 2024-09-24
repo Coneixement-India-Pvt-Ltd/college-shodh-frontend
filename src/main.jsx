@@ -4,12 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Layout from './Layout.jsx'
-import HomePage from './component/Home/HomePage.jsx'
 import BlogPage from './component/BlogPage/BlogPage.jsx'
 import Colleges from './component/Colleges/Colleges.jsx'
 import ContactUs from './component/ContactUs/ContactUs.jsx'
 import AboutUs from './component/AboutUs/AboutUs.jsx'
 import BlogDetails from './component/BlogPage/BlogDetails/BlogDetails.jsx'
+import HomePage from './component/Home/HomePage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -223,11 +223,23 @@ function Ranking({
           </Grid>
         ))}
       </div>
+      <button
+        className="clear-filter-btn font-bold mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg"
+        onClick={() => {
+          setSelectedState("");
+          setSelectedCity("");
+          setNirfRanking([0, 200]);
+          setNbaAccreditation("");
+          handleNaacFilter({target:{value:""}});
+          onStateChange("");
+          onNbaFilter("");
+        }}
+      >Clear Filters</button>
     </Grid>
   );
 }
 
-export default Ranking;
+export default Ranking;
 
 
 // import React, { useState } from "react";

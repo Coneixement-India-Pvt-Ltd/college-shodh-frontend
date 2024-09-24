@@ -145,7 +145,10 @@ const MyModal = ({ closeModal, type }) => {
           {type === "BSc" ? "B. Sc Courses" : "BE/B. Tech Courses"}
         </h1>
         {currentCourses.map((course, index) => (
-          <button className="model-btn" onClick={closeModal} key={index}>
+          <button className="model-btn" onClick={() => {
+                  closeModal(course)
+            }
+          } key={index}>
             <img src={course.img} alt={course.name} />
             <span className="font-normal">{course.name}</span>
           </button>
