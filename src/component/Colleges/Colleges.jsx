@@ -79,6 +79,7 @@ function Colleges() {
   };
 
   const filteredColleges = colleges.filter((college) => {
+    
     const isStateMatch = selectedState
       ? college.address.toLowerCase().includes(selectedState.toLowerCase())
       : true;      
@@ -88,7 +89,7 @@ function Colleges() {
       : true;
     return (
       (search === "" ||
-        college.name.toLowerCase().includes(search.toLowerCase())) &&
+        college.college_name.toLowerCase().includes(search.toLowerCase())) &&
       (!filterNaac || college.naac === filterNaac) &&
       isStateMatch &&
       isCourseMatch
