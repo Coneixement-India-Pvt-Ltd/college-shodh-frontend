@@ -1,8 +1,15 @@
 import React from "react";
+import Header from "../AboutUs/Header";
+import Mission from "../AboutUs/Mission";
+import Vision from "../AboutUs/Vision";
 
 function AboutUs() {
   return (
     <>
+    <Header/>
+    <Vision/>
+    <Mission/>
+    
       <div className="border border-black-800 rounded-lg p-1 mt-5 mb-5 ml-10 mr-10 hover:shadow-lg">
         <h1 className="text-2xl font-serif font-bold text-gray-800 mt-10 mb-1">
           About Us
