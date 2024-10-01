@@ -15,7 +15,7 @@ function AboutUs() {
         <p className="text-xs">Galorte Tech Park, Bavdhan</p>
         <p className="mt-3 text-gray-700">For any queries contact us on</p>
         <p className="font-bold text-gray-700 mt-1 mb-10">
-          EMAIL:{" "}
+          EMAIL:{""}
           {/* <a href={`mailto:${emailAddress} `}>
             <span style={emailStyle}>{emailAddress}</span>
           </a> */}

@@ -3,10 +3,10 @@ import axios from "axios";
 import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
-import Ranking from "./Ranking";
-import Pagination from "./Pagination";
+import Ranking from "../component/Colleges/Ranking";
+import Pagination from "../component/Colleges/Pagination";
 import HashLoader from "react-spinners/HashLoader";
-import "./Colleges.css";
+import "../styles/Colleges/Colleges.css";
 
 // for card icons
 import { IoLocationOutline } from "react-icons/io5";
@@ -18,7 +18,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { IoNewspaperOutline } from "react-icons/io5";
 
 // modal
-import MyModal from "../Modals/Modal";
+import MyModal from "../component/Modals/Modal";
 
 const Options = [
   { text: "B. Arch", course: "Architecture" },

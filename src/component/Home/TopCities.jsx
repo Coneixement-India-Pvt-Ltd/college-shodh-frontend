@@ -82,9 +82,8 @@ const TopCities = () => {
         <button
           onClick={handleNext}
           disabled={startIndex + citiesPerPage >= cities.length}
-          className={`arrow-button ${
-            startIndex + citiesPerPage >= cities.length ? "disabled" : ""
-          }`}
+          className={`arrow-button ${startIndex + citiesPerPage >= cities.length ? "disabled" : ""
+            }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
