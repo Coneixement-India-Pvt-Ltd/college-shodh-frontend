@@ -3,33 +3,45 @@ import React from "react";
 const Mission = () => {
   return (
     <>
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 py-0 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-            <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
+      <section className="bg-gray-50">
+        <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
+            <div className="relative z-10 lg:py-16">
+              <div className="relative h-64 sm:h-80 lg:h-full">
+                <img
+                  alt=""
+                  src="https://www.awpem.com/assets/img/about/mission-awpem.png"
+                  className="absolute inset-0 h-96 w-full mt-14 object-cover object-center sm:h-96 lg:h-full"
+                />
+              </div>
             </div>
 
-            <div className="lg:py-24">
-              <h2 className="text-3xl font-bold sm:text-4xl">Our Mission</h2>
+            <div className="relative flex items-center ">
+              <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16"></span>
 
-              <p className="mt-4 text-gray-600">
-                The mission of CollegeDunia is to simplify the college search
-                process by providing reliable, comprehensive information about
-                educational institutions, courses, and admissions, empowering
-                students to make informed decisions.
-              </p>
+              <div className="p-8 sm:p-40 lg:p-10">
+                <h2 className="text-2xl font-bold sm:text-3xl">
+                  Our Mission
+                </h2>
 
-              <a
-                href="#"
-                className="mt-8 inline-block rounded bg-indigo-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-yellow-400"
-              >
-                Get Started Today
-              </a>
+                <p className="mt-4 text-gray-600">
+                  At CollegeShodh, our mission is to empower students in their
+                  journey of higher education by providing comprehensive,
+                  accurate, and accessible information about colleges. We aim to
+                  simplify the college selection process, ensuring that every
+                  student can make informed decisions that align with their
+                  career aspirations.
+                </p>
+
+                <div className="mt-4 md:mt-8 text-center">
+                  <a
+                    href="#"
+                    className="inline-block rounded bg-blue-700 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-400"
+                  >
+                    Get Started Today
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

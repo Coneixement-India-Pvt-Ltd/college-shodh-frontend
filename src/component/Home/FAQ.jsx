@@ -4,11 +4,8 @@ const FAQ = () => {
   return (
     <>
       <div className="space-y-4 ml-32 mr-32 p-6">
-        <h1 className="text-2xl font-semibold">FAQ</h1>
-        <details
-          className="group [&_summary::-webkit-details-marker]:hidden"
-          open
-        >
+        <h1 className="text-2xl font-semibold">FAQs</h1>
+        <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
               Which is the best college in India for engineering?
