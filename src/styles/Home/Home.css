@@ -1,159 +1,152 @@
 /* For mobile screens */
 @media only screen and (max-width: 600px) {
-    #image {
-      width: 100%; 
-      height: auto;
-      align-items: center;
-    }
+  #image {
+    width: 100%;
+    height: auto;
+    align-items: center;
   }
-
-@media screen and (max-width: 767px) {
-    #passion {
-        font-size: x-large;
-        font-weight: 900;
-        text-align: center;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        margin-bottom: auto;
-    }
 }
 
 @media screen and (max-width: 767px) {
-    #stem {
-        font-size: medium;
-        font-weight: 600;
-        text-align: center;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+  #passion {
+    font-size: x-large;
+    font-weight: 900;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: auto;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    #search {
-        font-size: small;
-        font-weight: 700;
-        width: 15rem;
-        text-align: center;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
+  #stem {
+    font-size: medium;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
+@media screen and (max-width: 767px) {
+  #search {
+    font-size: small;
+    font-weight: 700;
+    width: 15rem;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
 
 #btn > button + button {
-    margin-left: 3rem; 
-    margin-right: 3rem; 
-  }
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
 
 @media screen and (max-width: 600px) {
-    #btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+  #btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 #btn button:hover {
-    transform: scale(1.15);
-    transition: 0.4s;
+  transform: scale(1.15);
+  transition: 0.4s;
 }
 
 @media screen and (max-width: 767px) {
-    #science {
-        margin-bottom: 1rem;
-    }
+  #science {
+    margin-bottom: 1rem;
+  }
 }
 @media screen and (max-width: 767px) {
-    #engineering {
-        margin-bottom: 1rem;
-    }
+  #engineering {
+    margin-bottom: 1rem;
+  }
 }
-
 
 /* Flexbox layout for buttons */
 .btn-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-  
-  /* Style for individual buttons */
+
+/* Style for individual buttons */
 .btn-container button {
-    margin: 6px; 
+  margin: 6px;
 }
-  
-  /* Adjust button width for mobile screens */
+
+/* Adjust button width for mobile screens */
 @media screen and (max-width: 767px) {
-    .btn-container button {
-      width: calc(50% - 16px); 
-      margin-left: 5px;
-    }
+  .btn-container button {
+    width: calc(50% - 16px);
+    margin-left: 5px;
+  }
 }
 
 .btn-container button img {
-    margin: auto;
+  margin: auto;
 }
 
 @media screen and (max-width: 767px) {
-    .btn-container button img {
-        margin: auto;
-        display: block;
-    }
+  .btn-container button img {
+    margin: auto;
+    display: block;
+  }
 }
 
 /* Hover effect */
 .btn-container button:hover {
-    transform: scale(1.05); 
-    transition: 0.4s;
+  transform: scale(1.05);
+  transition: 0.4s;
 }
-  
-  /* Change text color on hover */
+
+/* Change text color on hover */
 .btn-container button:hover .text-gray-800 {
-    color: #000;
+  color: #000;
 }
 
 .option-item {
-    transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
-  }
-  
-  
-#image {
-    height: 36.3rem;
+  transition: font-size 0.3s, font-weight 0.3s, color 0.3s;
 }
 
+#image {
+  height: 36.3rem;
+}
 
 /* TypeWriter */
 
 .container {
-    display: inline-block;
+  display: inline-block;
 }
 
-.text{
-    font-size: 3em;
-    letter-spacing: 0.1px;
-    font-family: normal;
-    border-right: 5px solid;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: 
-           typing 2s steps(16),
-           cursor .4s step-end infinite alternate ;
-
+.text {
+  font-size: 3em;
+  letter-spacing: 0.1px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  border-right: 5px solid;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s infinite, cursor 0.8s step-end infinite alternate;
 }
 
 @keyframes cursor {
-    50% { border-color: transparent}
-    
+  50% {
+    border-color: transparent;
+  }
 }
 
 @keyframes typing {
-    from {width: 0;}
-    to {width: 100%;}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
-
-
-  
-
-
-  
