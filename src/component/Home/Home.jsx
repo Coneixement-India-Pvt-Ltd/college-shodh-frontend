@@ -5,10 +5,8 @@ import barch_image from "../../assets/barch.jpg";
 import bpharma from "../../assets/bpharma.jpg";
 import bca from "../../assets/bca.jpg";
 import bebtech from "../../assets/bebtech.jpg";
-import bsc from "../../assets/bsc.jpg";
 import "../../styles/Home/Home.css";
-import { IoArrowForwardOutline, IoSearchOutline } from "react-icons/io5";
-import { IoMdArrowDropright } from "react-icons/io";
+import { IoArrowForwardOutline } from "react-icons/io5";
 
 const BackgroundImages = [barch_image, bpharma, bca, bebtech];
 
