@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyModal from "../Modals/Modal";
-import "./Home.css";
-import barch_image from "../../assets/barch.jpg"
-import bpharma from "../../assets/bpharma.jpg"
-import bca from "../../assets/bca.jpg"
-import bebtech from "../../assets/bebtech.jpg"
-import bsc from "../../assets/bsc.jpg"
+import barch_image from "../../assets/barch.jpg";
+import bpharma from "../../assets/bpharma.jpg";
+import bca from "../../assets/bca.jpg";
+import bebtech from "../../assets/bebtech.jpg";
+import bsc from "../../assets/bsc.jpg";
+import "../../styles/Home/Home.css";
 
 const BackgroundImages = [barch_image, bpharma, bca, bebtech];
 
@@ -92,17 +92,16 @@ export default function Home() {
               {Options.map((option, index) => (
                 <Link to={option.link} key={index}>
                   <div
-                    className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-40 ${
-                      optionIndex === index
+                    className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-40 ${optionIndex === index
                         ? "font-bold text-orange-600 text-decoration-line: underline"
                         : "text-white"
-                    }`}
+                      }`}
                     onClick={
                       option.text === "B. Sc" || option.text === "BE/B. Tech"
                         ? () =>
-                            openModal(
-                              option.text === "B. Sc" ? "BSc" : "BE/B. Tech"
-                            )
+                          openModal(
+                            option.text === "B. Sc" ? "BSc" : "BE/B. Tech"
+                          )
                         : undefined
                     }
                   >

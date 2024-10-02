@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Slider from "@mui/material/Slider";
-import "./Ranking.css"; // Import the CSS file
+import "../../styles/Colleges/Ranking.css"; 
 
 function Ranking({
   filterNaac,

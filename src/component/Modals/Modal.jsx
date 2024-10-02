@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Modal.css";
+import "../../styles/Modal.css";
 
 const MyModal = ({ closeModal, type }) => {
   // to stop scrolling when modal is open
