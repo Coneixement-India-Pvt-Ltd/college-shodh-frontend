@@ -23,7 +23,7 @@ const Programs = () => {
   return (
     <div className="text-center pb-8">
       <div>
-        <p className="text-2xl font-system-ui p-4 mt-4 text-gray-800 bg-neutral-200">
+        <p className="text-2xl font-mono p-4 mt-4 text-gray-800 bg-neutral-200">
           Discover Bachelor's Program in Science, Technology, Engineering and
           Mathematics
         </p>
