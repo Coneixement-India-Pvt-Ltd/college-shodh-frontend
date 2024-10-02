@@ -29,8 +29,12 @@ const Options = [
 ];
 
 function Colleges() {
+  // Get the query from the URL
+  const query = new URLSearchParams(window.location.search);
+  const searchQuery = query.get("search") || "";
+
   const [colleges, setColleges] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(searchQuery);
   const [filterNaac, setFilterNaac] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [selectedState, setSelectedState] = useState("");
@@ -44,11 +48,12 @@ function Colleges() {
       .get("https://college-shodh-backend.onrender.com/api/courses")
       .then((response) => {
         setColleges(response.data);
-        setLoading(false); // Set loading to false after data is fetched
       })
       .catch((error) => {
         console.error(error);
-        setLoading(false); // Ensure loading is false even if there's an error
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
@@ -79,13 +84,13 @@ function Colleges() {
   };
 
   const filteredColleges = colleges.filter((college) => {
-    
+
     const isStateMatch = selectedState
       ? college.address.toLowerCase().includes(selectedState.toLowerCase())
-      : true;      
+      : true;
     const isCourseMatch = selectedCourse
       ? college.dept &&
-        college.dept.toLowerCase().includes(selectedCourse.toLowerCase())
+      college.dept.toLowerCase().includes(selectedCourse.toLowerCase())
       : true;
     return (
       (search === "" ||
@@ -140,7 +145,17 @@ function Colleges() {
           <input
             type="text"
             id="search"
-            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+            onChange={(e) => {
+              // Add query to the URL
+              window.history.pushState(
+                "",
+                "",
+                `/colleges?search=${e.target.value}`
+              );
+              setSearch(e.target.value)
+
+            }}
             placeholder="Search college"
             className="p-2 h-11 w-96 mb-5 border border-black-400 rounded-2xl focus:outline-none focus:border-blue-600 text-center pl-10"
           />
@@ -157,15 +172,15 @@ function Colleges() {
           <Link to={option.link} key={index}>
             <button
               className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
-              onClick={ () => {
-                if(option.text === "B. Sc" || option.text === "BE/B. Tech"){
+              onClick={() => {
+                if (option.text === "B. Sc" || option.text === "BE/B. Tech") {
                   openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
                 }
-                else{
-                  handleCourseChange({name:option.course});
+                else {
+                  handleCourseChange({ name: option.course });
                 }
               }
-            }
+              }
             >
               <span className="hover:underline text-white font-medium">
                 {option.text}

@@ -7,6 +7,8 @@ import bca from "../../assets/bca.jpg";
 import bebtech from "../../assets/bebtech.jpg";
 import bsc from "../../assets/bsc.jpg";
 import "../../styles/Home/Home.css";
+import { IoArrowForwardOutline, IoSearchOutline } from "react-icons/io5";
+import { IoMdArrowDropright } from "react-icons/io";
 
 const BackgroundImages = [barch_image, bpharma, bca, bebtech];
 
@@ -65,27 +67,39 @@ export default function Home() {
             </p>
 
             <div className="relative mb-6">
-              <input
-                type="text"
-                id="search"
-                placeholder="Search for colleges, courses, exams, QnAs...."
-                className="px-4 py-3 md:py-4 pl-12 h-10 md:h-12 w-full md:w-96 border border-gray-500 rounded-2xl focus:outline-none focus:border-blue-500"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-6 md:w-7 h-6 md:h-7 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
-                style={{ fontSize: "1.5em" }}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 21l-4.35-4.35m2.85-3.65A7.5 7.5 0 1112 4.5a7.5 7.5 0 017.5 7.5z"
-                />
-              </svg>
+              <form className="w-full flex"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  if (e.target.search.value.trim() === "") return
+                  window.location.href = `/colleges?search=${e.target.search.value}`
+                }}>
+                <div className="input+svg">
+                  <input
+                    type="text"
+                    id="search"
+                    placeholder="Search for colleges, courses, exams, QnAs...."
+                    className="text-black px-4 py-3 md:py-4 pl-12 h-10 md:h-12 w-full md:w-96 border border-gray-500 rounded-2xl focus:outline-none focus:border-blue-500"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-6 md:w-7 h-6 md:h-7 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+                    style={{ fontSize: "1.5em" }}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 21l-4.35-4.35m2.85-3.65A7.5 7.5 0 1112 4.5a7.5 7.5 0 017.5 7.5z"
+                    />
+                  </svg>
+                </div>
+                <button type="submit" className="bg-orange-600 text-white px-4 py-3 md:py-4 ml-2 rounded-2xl">
+                  <IoArrowForwardOutline />
+                </button>
+              </form>
             </div>
 
             <div className="options-container absolute top-0 right-0 mt-40 mr-4 md:mr-36">
@@ -93,8 +107,8 @@ export default function Home() {
                 <Link to={option.link} key={index}>
                   <div
                     className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-40 ${optionIndex === index
-                        ? "font-bold text-orange-600 text-decoration-line: underline"
-                        : "text-white"
+                      ? "font-bold text-orange-600 text-decoration-line: underline"
+                      : "text-white"
                       }`}
                     onClick={
                       option.text === "B. Sc" || option.text === "BE/B. Tech"
