@@ -7,7 +7,7 @@ const navItems = [
   { label: "Home", to: "/" },
   { label: "About us", to: "/about" },
   { label: "Rankings", to: "/colleges" },
-  { label: "Blogs", to: "/blogs" },
+  // { label: "Blogs", to: "/blogs" },
   { label: "Contact Us", to: "/contact" },
 ];
 
