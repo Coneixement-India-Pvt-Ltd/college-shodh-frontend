@@ -19,7 +19,7 @@ const Mission = () => {
             <div className="relative flex items-center ">
               <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16"></span>
 
-              <div className="p-8 sm:p-40 lg:p-10">
+              <div className="p-8 sm:p-40 lg:p-10 text-center">
                 <h2 className="text-2xl font-bold sm:text-3xl">Our Mission</h2>
 
                 <p className="mt-4 text-gray-600">

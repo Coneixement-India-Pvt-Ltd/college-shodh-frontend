@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../styles/Modal.css";
+// import "../../styles/Modal.css";
 
 const MyModal = ({ closeModal, type }) => {
   // to stop scrolling when modal is open
@@ -138,25 +138,33 @@ const MyModal = ({ closeModal, type }) => {
 
   return (
     <>
-      <div className="modal-wrapper" onClick={closeModal}></div>
-      <div className="modal-container">
-        <h1 className="font-mono">
+      <div className="modal-wrapper fixed top-0 left-0 bottom-0 right-0 bg-[rgba(201,193,193,0.9)]" 
+      onClick={closeModal}></div>
+      <div className="modal-container h-[32rem] w-[60rem] fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg p-8">
+        <h1 className="font-mono m-[1rem] text-2xl font-bold text-gray-800 text-center">
           {type === "BSc" ? "B. Sc Courses" : "BE/B. Tech Courses"}
         </h1>
         {currentCourses.map((course, index) => (
-          <button className="model-btn" onClick={() => {
+          <button className="model-btn h-[8rem] w-[12rem] border-1 border rounded-lg m-2 p-2 cursor-pointer hover:bg-[#e7a759] hover:text-white hover:scale-105 transition-all duration-100"
+           onClick={() => {
                   closeModal(course)
             }
           } key={index}>
-            <img src={course.img} alt={course.name} />
+            <img src={course.img} alt={course.name}
+              className="h-8 w-8 ml-16 mb-2"
+            />
             <span className="font-normal">{course.name}</span>
           </button>
         ))}
-        <div className="pagination">
-          <button onClick={handlePrev} disabled={currentPage === 0}>
+        <div className="pagination flex justify-between mt-4">
+          <button onClick={handlePrev} disabled={currentPage === 0}
+          className="bg-[#007bff] text-white border-none p-[10px] cursor-pointer rounded-lg disabled:bg-[#cccccc] disabled:cursor-not-allowed"
+          >
             &lt; Prev
           </button>
-          <button onClick={handleNext} disabled={endIndex >= courses.length}>
+          <button onClick={handleNext} disabled={endIndex >= courses.length}
+            className="bg-[#007bff] text-white border-none p-[10px] cursor-pointer rounded-lg disabled:bg-[#cccccc] disabled:cursor-not-allowed"
+            >
             Next &gt;
           </button>
         </div>

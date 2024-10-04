@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Slider from "@mui/material/Slider";
-import "../../styles/Colleges/Ranking.css"; 
+// import "../../styles/Colleges/Ranking.css"; 
 
 function Ranking({
   filterNaac,
@@ -108,7 +108,7 @@ function Ranking({
   };
 
   return (
-    <Grid container direction="column" className="outer-box">
+    <Grid container direction="column" className="outer-box ml-[90px] border border-[rgb(213,211,211)] text-[rgb(17,17,27)] w-[200px] p-[10px] rounded-[10px]">
       <Grid item className="Inner-Topic">
         <h5 className="Apply-Filter  font-bold mb-1 ">Apply Filter</h5>
       </Grid>
@@ -118,10 +118,10 @@ function Ranking({
         <h4 className="font-bold mb-2 sub-topic">Select City</h4>
         <hr/>
       </Grid>
-      <div className="scrollable-container">
+      <div className="scrollable-container max-h-[300px] overflow-y-auto">
         {cityOptions.map((city) => (
           <Grid item key={city}>
-            <FormControlLabel className="Check-Box p-0"
+            <FormControlLabel className="Check-Box p-0 m-0 h-[25px]"
               control={
                 <Checkbox
                  
@@ -139,13 +139,13 @@ function Ranking({
 
       <Grid item className="Inner-Topic">
         <hr />
-        <h4 className="font-bold mb-1 sub-topic">Top State</h4>
+        <h4 className="font-bold mb-1 sub-topic text-left">Top State</h4>
         <hr/>
       </Grid>
-      <div className="scrollable-container">
+      <div className="scrollable-container max-h-[300px] overflow-y-auto">
         {stateOptions.map((state) => (
-          <Grid className="mb-0" item key={state}>
-            <FormControlLabel className="Check-Box p-0"
+          <Grid className="" item key={state}>
+            <FormControlLabel className="Check-Box p-0 m-0 h-[25px]"
               control={
                 <Checkbox
                   checked={selectedState === state}
@@ -165,10 +165,10 @@ function Ranking({
         <h2 className="font-bold mb-2 sub-topic">NAAC Rating</h2>
         <hr/>
       </Grid>
-      <div className="scrollable-container">
+      <div className="scrollable-container max-h-[300px] overflow-y-auto">
         {naacOptions.map((option) => (
           <Grid item key={option}>
-            <FormControlLabel className="Check-Box p-0"
+            <FormControlLabel className="Check-Box p-0 m-0 h-[25px]"
 
               control={
                 <Checkbox
@@ -205,7 +205,7 @@ function Ranking({
         <h2 className="font-bold mb-2 sub-topic">NBA Accreditation</h2>
         <hr/>
       </Grid>
-      <div className="scrollable-container">
+      <div className="scrollable-container max-h-[300px] overflow-y-auto">
         {nbaOptions.map((option) => (
           <Grid item key={option}>
             <FormControlLabel className="Check-Box p-0"

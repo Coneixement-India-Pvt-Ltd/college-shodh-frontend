@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import React, { useState } from "react";
-import "../../styles/Header.css";
+// import "../../styles/Header.css";
 
 // Navigation items with their labels and corresponding paths
 const navItems = [
@@ -39,20 +39,7 @@ export default function Header() {
             </Link>
           </div>
 
-          <div className="flex items-center lg:order-2">
-            <button className="block lg:hidden m-4" onClick={toggleMenu}>
-              {/* Hamburger icon */}
-              <svg
-                className="w-6 h-6 fill-current"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"
-                />
-              </svg>
-            </button>
+          <div className="flex items-center lg:order-2 flex-row">
             <Link
               to="https://entechonline.com/"
               className="hidden lg:block text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
@@ -68,7 +55,9 @@ export default function Header() {
             <ul className="flex flex-col mt-4 font-medium lg:flex-row sm:space-x-8 lg:mt-0">
               {/* Render navigation links */}
               {navItems.map((item, index) => (
-                <li key={index}>
+                <li key={index}
+                  className="ml-8"
+                >
                   <NavLink
                     to={item.to}
                     className={({ isActive }) =>
@@ -93,6 +82,19 @@ export default function Header() {
               </li>
             </ul>
           </div>
+          <button className="block lg:hidden m-4" onClick={toggleMenu}>
+              {/* Hamburger icon */}
+              <svg
+                className="w-6 h-6 fill-current"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"
+                />
+              </svg>
+            </button>
         </div>
       </nav>
     </header>

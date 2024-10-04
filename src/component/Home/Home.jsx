@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import MyModal from "../Modals/Modal";
 import barch_image from "../../assets/barch-min.jpg";
 import bpharma from "../../assets/bpharma-min.jpg";
 import bca from "../../assets/bca-min.jpg";
 import bebtech from "../../assets/bebtech-min.jpg";
 import bsc from "../../assets/bsc-min.jpg";
-import "../../styles/Home/Home.css";
+// import "../../styles/Home/Home.css";
 import { IoArrowForwardOutline } from "react-icons/io5";
 
 const BackgroundImages = [barch_image, bpharma, bca, bebtech, bsc];
@@ -40,7 +38,6 @@ export default function Home() {
 
     return () => clearInterval(intervalId);
   }, []);
-
   return (
     <div>
       <link rel="preload" as="image" href={barch_image} />
@@ -50,23 +47,23 @@ export default function Home() {
       <link rel="preload" as="image" href={bsc} />
       <div
         id="image"
-        className="relative h-96 bg-cover bg-center bg-[rgba(0,0,0,0.4)] bg-blend-darken"
+        className="relative h-[36.3rem] bg-cover bg-center bg-[rgba(0,0,0,0.4)] bg-blend-darken"
         style={{ backgroundImage: `url(${BackgroundImages[bgIndex]})` }}
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>
 
         <div className="relative flex flex-col items-start justify-center h-full px-4 md:px-24">
           <div className="text-white text-left">
-            <div id="passion" className="s text-gray-800 mt-6 md:mt-6">
-              <div className="container">
-                <div className="text">
+            <div id="passion" className="text-gray-800 mt-6 md:mt-6">
+              <div className="container inline-block w-min">
+                <div className="text text-3xl lg:text-5xl md:text-4xl tracking-[0.1px] font-sans animate-type border-r-4 whitespace-nowrap overflow-hidden">
                   <span className="text-white">FOLLOW YOUR </span>
                   <span className="text-orange-600">PASSION</span>
                 </div>
               </div>
             </div>
 
-            <p id="stem" className="text-lg font-medium mb-4">
+            <p id="stem" className="text-lg font-medium mb-4 whitespace-pre-wrap">
               Science Technology Engineering Mathematics (STEM)
             </p>
 
@@ -106,11 +103,11 @@ export default function Home() {
               </form>
             </div>
 
-            <div className="options-container absolute top-0 right-0 mt-40 mr-4 md:mr-36">
+            <div className="options-container hidden lg:block absolute top-0 right-0 mt-40 mr-4 md:mr-36 transition-[font-size,font-weight,color] duration-300 ease-in-out">
               {Options.map((option, index) => (
                   <div
                     key={index}
-                    className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-40 ${optionIndex === index
+                    className={`text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-40 ${optionIndex === index
                       ? "font-bold text-orange-600 text-decoration-line: underline"
                       : "text-white"
                       }`}
