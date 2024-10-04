@@ -10,8 +10,8 @@ const Enquiry = () => {
               Have a question? Need Some Help?
             </h2>
             <p className="hidden text-gray-500 sm:mt-4 sm:block">
-              We’d love to hear from you! At CollegeShodh, we’re here to assist
-              you with any inquiries or support regarding your college search.
+              We’d love to hear from you! Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit.
             </p>
           </div>
           <div className="mx-auto mt-8 max-w-xl">

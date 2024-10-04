@@ -13,7 +13,10 @@ const Header = () => {
               </h1>
 
               <p className="mt-1.5 text-base text-gray-900">
-              Welcome to CollegeShodh! We are dedicated to helping students discover the right college for their career aspirations. Our platform provides comprehensive information on colleges, focusing on STEM fields and beyond, to simplify your college search.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+                quae veniam distinctio quisquam a saepe facilis ea quidem!
+                Impedit sapiente facilis distinctio nihil perferendis aut
+                exercitationem fugiat rerum temporibus reprehenderit?
               </p>
             </div>
           </div>

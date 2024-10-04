@@ -1,51 +1,4 @@
-// import React from 'react';
-
-// const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-//   const pageNumbers = [];
-
-//   for (let i = 1; i <= totalPages; i++) {
-//     pageNumbers.push(i);
-//   }
-
-//   return (
-//     <div className="flex justify-between w-full pl-10 items-center mt-4 mb-4">
-//       <div className="flex-1 text-left ml-5">
-//         <button
-//           className={`p-2 rounded ${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white'}`}
-//           onClick={() => onPageChange(currentPage - 1)}
-//           disabled={currentPage === 1}
-//         >
-//           Prev
-//         </button>
-//       </div>
-//       <div className="flex space-x-2">
-//         {pageNumbers.map(number => (
-//           <button
-//             key={number}
-//             onClick={() => onPageChange(number)}
-//             className={`px-3 py-1 rounded-3xl ${currentPage === number ? 'bg-blue-700 text-white font-bold' : 'bg-gray-400 text-white'}`}
-//           >
-//             {number}
-//           </button>
-//         ))}
-//       </div>
-//       <div className="flex-1 text-right mr-5">
-//         <button
-//           className={`p-2 rounded ${currentPage === totalPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-500 text-white'}`}
-//           onClick={() => onPageChange(currentPage + 1)}
-//           disabled={currentPage === totalPages}
-//         >
-//           Next
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Pagination;
-
-
-import React from 'react';
+import React from "react";
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const pageNumbers = [];
@@ -76,17 +29,19 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   }
 
   return (
-    <ol className="flex justify-center gap-1 text-xs font-medium mb-5">
+    <ol className="flex justify-center gap-2 text-sm font-medium mb-5">
       <li>
         <button
           onClick={() => onPageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className={`inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''}`}
+          className={`inline-flex w-10 h-10 items-center justify-center rounded border border-gray-200 bg-white text-gray-900 ${
+            currentPage === 1 ? "cursor-not-allowed opacity-50" : ""
+          }`}
         >
           <span className="sr-only">Prev Page</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-3 w-3"
+            className="h-4 w-4" // Increased size of the arrow icon
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -98,28 +53,32 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           </svg>
         </button>
       </li>
-
-      {pageNumbers.map(number => (
+      {pageNumbers.map((number) => (
         <li key={number}>
           <button
             onClick={() => onPageChange(number)}
-            className={`block size-8 rounded border text-center leading-8 ${currentPage === number ? 'border-blue-600 bg-blue-600 text-white' : 'border-gray-100 bg-white text-gray-900'}`}
+            className={`block w-10 h-10 rounded border text-center leading-10 ${
+              currentPage === number
+                ? "border-blue-600 bg-blue-600 text-white"
+                : "border-gray-200 bg-white text-gray-900"
+            }`}
           >
             {number}
           </button>
         </li>
       ))}
-
       <li>
         <button
           onClick={() => onPageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className={`inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}`}
+          className={`inline-flex w-10 h-10 items-center justify-center rounded border border-gray-200 bg-white text-gray-900 ${
+            currentPage === totalPages ? "cursor-not-allowed opacity-50" : ""
+          }`}
         >
           <span className="sr-only">Next Page</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-3 w-3"
+            className="h-4 w-4" // Increased size of the arrow icon
             viewBox="0 0 20 20"
             fill="currentColor"
           >

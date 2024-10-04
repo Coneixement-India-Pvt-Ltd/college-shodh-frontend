@@ -20,17 +20,15 @@ const Mission = () => {
               <span className="hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16"></span>
 
               <div className="p-8 sm:p-40 lg:p-10">
-                <h2 className="text-2xl font-bold sm:text-3xl">
-                  Our Mission
-                </h2>
+                <h2 className="text-2xl font-bold sm:text-3xl">Our Mission</h2>
 
                 <p className="mt-4 text-gray-600">
-                  At CollegeShodh, our mission is to empower students in their
-                  journey of higher education by providing comprehensive,
-                  accurate, and accessible information about colleges. We aim to
-                  simplify the college selection process, ensuring that every
-                  student can make informed decisions that align with their
-                  career aspirations.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Beatae fuga, ex nisi numquam esse dicta doloribus aliquid,
+                  molestias voluptates, ad quo vel nemo quos cumque repellendus
+                  laborum distinctio! Eum, reprehenderit? Dolores praesentium
+                  quos aliquid et ut amet iure totam ducimus blanditiis
+                  provident maxime
                 </p>
 
                 <div className="mt-4 md:mt-8 text-center">

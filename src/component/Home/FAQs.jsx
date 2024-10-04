@@ -8,7 +8,7 @@ const FAQs = () => {
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
-              Which is the best college in India for engineering?
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
             </h2>
 
             <svg
@@ -28,16 +28,17 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            The Indian Institute of Technology (IIT) Madras is consistently
-            ranked as the top engineering college in India, according to the
-            NIRF rankings.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
+            voluptas rerum magni ab minima, exercitationem sint officia minus
+            earum et magnam dicta labore rem quibusdam sequi suscipit,
+            aspernatur veniam.
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
-              What are the top colleges in India for science and research?
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </h2>
 
             <svg
@@ -57,16 +58,17 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            The Indian Institute of Science (IISc), Bangalore, is the top choice
-            for science and research programs, known for its cutting-edge
-            research in various scientific disciplines
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
+            voluptas rerum magni ab minima, exercitationem sint officia minus
+            earum et magnam dicta labore rem quibusdam sequi suscipit,
+            aspernatur veniam.
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
-              How can I apply to IITs for undergraduate programs?
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </h2>
 
             <svg
@@ -86,16 +88,17 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            To apply for undergraduate programs at IITs, you need to clear the
-            JEE Main and JEE Advanced exams. Your rank in JEE Advanced
-            determines your admission to various IITs.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
+            voluptas rerum magni ab minima, exercitationem sint officia minus
+            earum et magnam dicta labore rem quibusdam sequi suscipit,
+            aspernatur veniam.
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
-              What are the admission requirements for top colleges in India?
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </h2>
 
             <svg
@@ -115,10 +118,10 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            Admission to top colleges like IITs, IIMs, and IISc typically
-            requires clearing national-level entrance exams like JEE (for IITs),
-            GATE (for IISc), and CAT (for IIMs). Other universities have their
-            own entrance exams or merit-based admissions.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
+            voluptas rerum magni ab minima, exercitationem sint officia minus
+            earum et magnam dicta labore rem quibusdam sequi suscipit,
+            aspernatur veniam.
           </p>
         </details>
       </div>

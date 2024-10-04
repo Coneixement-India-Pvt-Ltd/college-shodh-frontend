@@ -11,11 +11,11 @@ const Vision = () => {
             </h2>
 
             <p className="hidden text-gray-500 md:mt-4 md:block">
-              Our vision is to create a world where every student has the
-              resources and guidance to find the right college for their future.
-              We aspire to be the leading platform for college discovery,
-              fostering a community that supports students in achieving their
-              educational and career goals.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae
+              fuga, ex nisi numquam esse dicta doloribus aliquid, molestias
+              voluptates, ad quo vel nemo quos cumque repellendus laborum
+              distinctio! Eum, reprehenderit? Dolores praesentium quos aliquid
+              et ut amet iure totam ducimus blanditiis provident maxime
             </p>
 
             <div className="mt-4 md:mt-8">
