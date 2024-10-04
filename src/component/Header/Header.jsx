@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header className="shadow sticky z-50 top-0 transition-all">
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
+      <nav className="bg-white border-gray-200 px-4 md:px-6 py-2.5">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <div>
             <Link to="/" className="flex items-center">
@@ -39,20 +39,20 @@ export default function Header() {
             </Link>
           </div>
 
-          <div className="flex items-center lg:order-2 flex-row">
+          <div className="flex items-center md:order-2 flex-row">
             <Link
               to="https://entechonline.com/"
-              className="hidden lg:block text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              className="hidden md:block text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 md:px-5 py-2 md:py-2.5 mr-2 focus:outline-none"
             >
               Explore Your Passion
             </Link>
           </div>
           <div
-            className={`lg:flex lg:w-auto lg:order-1 m-auto ${menuOpen ? "block" : "hidden"
+            className={`md:flex md:w-auto m-auto ${menuOpen ? "block" : "hidden"
               }`}
             id="mobile-menu-2"
           >
-            <ul className="flex flex-col mt-4 font-medium lg:flex-row sm:space-x-8 lg:mt-0">
+            <ul className="flex flex-col mt-4 font-medium md:flex-row sm:space-x-8 md:mt-0">
               {/* Render navigation links */}
               {navItems.map((item, index) => (
                 <li key={index}
@@ -62,7 +62,7 @@ export default function Header() {
                     to={item.to}
                     className={({ isActive }) =>
                       `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-600" : "text-gray-700"
-                      } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-600 lg:p-0`
+                      } border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-600 md:p-0`
                     }
                     onClick={closeMenu}
                   >
@@ -71,10 +71,10 @@ export default function Header() {
                 </li>
               ))}
               {/* Mobile-specific link */}
-              <li className="block lg:hidden">
+              <li className="block md:hidden">
                 <Link
                   to="https://entechonline.com/"
-                  className="text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+                  className="text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 md:px-5 py-2 md:py-2.5 mr-2 focus:outline-none"
                   onClick={closeMenu}
                 >
                   Explore Your Passion
@@ -82,7 +82,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <button className="block lg:hidden m-4" onClick={toggleMenu}>
+          <button className="block md:hidden m-4" onClick={toggleMenu}>
               {/* Hamburger icon */}
               <svg
                 className="w-6 h-6 fill-current"

@@ -1,21 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Button from "@mui/material/Button";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import Ranking from "../component/Colleges/Ranking";
 import Pagination from "../component/Colleges/Pagination";
 import HashLoader from "react-spinners/HashLoader";
-// import "../styles/Colleges/Colleges.css";
-
-// for card icons
-import { IoLocationOutline } from "react-icons/io5";
-import { FaPhoneAlt } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { FaRegBuilding } from "react-icons/fa";
-import { PiStudentFill } from "react-icons/pi";
-import { FaPeopleGroup } from "react-icons/fa6";
-import { IoNewspaperOutline } from "react-icons/io5";
 
 // modal
 import MyModal from "../component/Modals/Modal";
@@ -116,8 +105,6 @@ function Colleges() {
   const [showModal, setShowModal] = useState(false);
   const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
 
-  const [optionIndex, setOptionIndex] = useState(0);
-
   const closeModal = (course) => {
     setShowModal(false);
     if (course) {
@@ -131,17 +118,16 @@ function Colleges() {
 
   const override = {
     display: "block",
-    margin: "0 auto",
+    margin: "100px auto 100px auto",
     borderWidth: "8px", // Adjust the border width to make the ring thicker
-    marginTop: "-300px",
+    // marginTop: "-300px",
   };
+
+  const [openFilters, setOpenFilters] = useState(false);
 
   return (
     <>
-      <div className="flex justify-evenly mt-5">
-        {/* <h2 className="text-3xl font-sans font-bold text-black-700 mt-2">
-          Follow Your Passion
-        </h2> */}
+      <div className="flex flex-col md:flex-row items-center justify-evenly mt-5">
         <div className="relative">
           <input
             type="text"
@@ -162,71 +148,91 @@ function Colleges() {
           />
           <SearchIcon className="absolute left-3 top-3 text-gray-400" />
         </div>
-        <p className="mt-3 text-blue-700 font-bold font-sans text-xl">
+        <p className="md:mt-3 text-blue-700 font-bold font-sans text-xl">
           Total Colleges Found: {filteredColleges.length}
         </p>
       </div>
 
       {/* buttons */}
-      <div className="mt-5 mb-5 btn-container flex justify-center gap-x-8">
-        {Options.map((option, index) => (
-          <Link to={option.link} key={index}>
-            <button
-              className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
-              onClick={() => {
-                if (option.text === "B. Sc" || option.text === "BE/B. Tech") {
-                  openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
+      <div className="flex flex-col items-center">
+        <div className="mt-5 mb-5 btn-container md:flex justify-center gap-x-8 grid grid-cols-3">
+          {Options.map((option, index) => (
+            <Link to={option.link} key={index}>
+              <button
+                className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
+                onClick={() => {
+                  if (option.text === "B. Sc" || option.text === "BE/B. Tech") {
+                    openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
+                  }
+                  else {
+                    handleCourseChange({ name: option.course });
+                  }
                 }
-                else {
-                  handleCourseChange({ name: option.course });
                 }
-              }
-              }
-            >
-              <span className="hover:underline text-white font-medium">
-                {option.text}
-              </span>
-            </button>
-          </Link>
-        ))}
+              >
+                <span className="hover:underline text-white font-medium">
+                  {option.text}
+                </span>
+              </button>
+            </Link>
+          ))}
+        </div>
       </div>
-
-      {/* <div className="mt-5 mb-5 btn-container">
-        {Options.map((option, index) => (
-          <button
-            className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
-            key={index}
-            onClick={() => {
-              if (option.text === "B. Sc" || option.text === "BE/B. Tech") {
-                openModal(option.text);
-              } else {
-                handleCourseChange(option.course);
-              }
-            }}
-          >
-            <span className="hover:underline text-white font-medium">
-              {option.text}
-            </span>
-          </button>
-        ))}
-      </div> */}
 
       <h1 className="font-bold text-gray-500 font-mono flex justify-center">
         Following Your Passion in {selectedCourse}
       </h1>
 
-      <div className="flex justify-between">
-        <div className="w-1/4 ml-4 mt-4 mb-4">
+      <div className="flex w-full justify-between">
+      {/* 
+      lg:w-1/2 w-full md:ml-4 lg:ml-32 mt-4 mb-4 hidden md:block
+       */}
+        <div className={`
+        z-[1000] overflow-auto
+        w-full md:static 
+        fixed top-0 bottom-0 left-0 right-0 
+        py-64 md:py-0        
+        bg-[rgba(0,0,0,0.5)] md:bg-transparent
+        md:w-1/2
+        md:ml-4 lg:ml-32
+        md:my-4
+        ` + (openFilters ? "block" : "hidden md:block")}
+        
+        >
           <Ranking
             filterNaac={filterNaac}
             handleNaacFilter={handleNaacFilter}
             sortOrder={sortOrder}
             handleSortChange={handleSortChange}
             onStateChange={handleStateChange}
+            openFilters={openFilters}
+            setOpenFilters={setOpenFilters}
           />
         </div>
 
+        {/*  Filter modal for mobile view */}
+        {/* {openFilters && (
+          <div className="w-full fixed md:hidden top-0 bottom-0 left-0 right-0 py-64 bg-[rgba(0,0,0,0.5)] z-[1000] overflow-auto">
+            <Ranking
+              filterNaac={filterNaac}
+              handleNaacFilter={handleNaacFilter}
+              sortOrder={sortOrder}
+              handleSortChange={handleSortChange}
+              onStateChange={handleStateChange}
+              openFilters={openFilters}
+              setOpenFilters={setOpenFilters}
+            />
+          </div>
+        )} */}
+
+
         <div className="w-full pl-10 flex flex-col mt-3 items-center">
+          <button className="bg-blue-500 text-white p-2 rounded-md md:w-[70%] w-full mr-12 mb-4 hover:bg-blue-700 md:hidden"
+            onClick={() => setOpenFilters(!openFilters)}
+          >
+            Filters
+          </button>
+
           {loading ? (
             <div className="flex justify-center items-center h-full w-full">
               <HashLoader

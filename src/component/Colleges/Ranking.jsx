@@ -13,6 +13,9 @@ function Ranking({
   handleSortChange,
   onStateChange,
   onNbaFilter,
+  openFilters,
+  setOpenFilters
+  
 }) {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
@@ -108,9 +111,21 @@ function Ranking({
   };
 
   return (
-    <Grid container direction="column" className="outer-box ml-[90px] border border-[rgb(213,211,211)] text-[rgb(17,17,27)] w-[200px] p-[10px] rounded-[10px]">
-      <Grid item className="Inner-Topic">
+    <Grid container direction="column" 
+    className="outer-box bg-white border border-[rgb(213,211,211)] text-[rgb(17,17,27)] w-[200px] p-[10px] rounded-[10px]">
+      <Grid item className="Inner-Topic flex justify-between">
         <h5 className="Apply-Filter  font-bold mb-1 ">Apply Filter</h5>
+        {openFilters !== null &&
+        <button 
+        className="md:hidden font-bold bg-blue-500 text-white px-4 py-2 rounded-lg"
+        onClick={() => {
+          if(openFilters){
+            setOpenFilters(!openFilters)
+          }
+        }}
+        >
+          X
+        </button>}
       </Grid>
 
       <Grid item className="Inner-Topic">

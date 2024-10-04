@@ -14,7 +14,7 @@ export default function CollegeCard({college}){
         <div
                 id="college-card"
                 key={college._id}
-                className="border-b w-[70%] border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-32 ml-20 hover:shadow-2xl transition-shadow"
+                className="border-b lg:w-[70%] w-full border-gray-300 border rounded-lg p-2 pl-6 pr-6 mb-5 mr-32 ml-20 hover:shadow-2xl transition-shadow"
               >
                 <h1 className="text-xl font-bold text-gray-900 text-left">
                   {college.college_name}
