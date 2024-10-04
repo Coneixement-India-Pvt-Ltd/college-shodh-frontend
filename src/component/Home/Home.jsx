@@ -10,35 +10,35 @@ import { IoArrowForwardOutline } from "react-icons/io5";
 
 const BackgroundImages = [barch_image, bpharma, bca, bebtech];
 
-const Options = [
-  { text: "B. Arch", img: "./agri.png", link: "#" },
-  { text: "B. Pharm", img: "./Pharma.png", link: "#" },
-  { text: "BCA", img: "./BCA.png", link: "#" },
-  { text: "BE/B. Tech", img: "./Btech.png", link: "#" },
-  { text: "B. Sc", img: "./BSC.png", link: "#" },
-];
+// const Options = [
+//   { text: "B. Arch", img: "./agri.png", link: "#" },
+//   { text: "B. Pharm", img: "./Pharma.png", link: "#" },
+//   { text: "BCA", img: "./BCA.png", link: "#" },
+//   { text: "BE/B. Tech", img: "./Btech.png", link: "#" },
+//   { text: "B. Sc", img: "./BSC.png", link: "#" },
+// ];
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false);
-  const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
+  // const [showModal, setShowModal] = useState(false);
+  // const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
 
-  const closeModal = () => setShowModal(false);
-  const openModal = (type) => {
-    setShowModal(true);
-    setSelectedType(type);
-  };
+  // const closeModal = () => setShowModal(false);
+  // const openModal = (type) => {
+  //   setShowModal(true);
+  //   setSelectedType(type);
+  // };
 
   const [bgIndex, setBgIndex] = useState(0);
-  const [optionIndex, setOptionIndex] = useState(0);
+  // const [optionIndex, setOptionIndex] = useState(0);
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
-      setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
-    }, 5000);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
+  //     setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
+  //   }, 5000);
 
-    return () => clearInterval(intervalId);
-  }, []);
+  //   return () => clearInterval(intervalId);
+  // }, []);
 
   return (
     <div>
@@ -100,7 +100,7 @@ export default function Home() {
               </form>
             </div>
 
-            <div className="options-container absolute top-0 right-0 mt-40 mr-4 md:mr-36">
+            {/* <div className="options-container absolute top-0 right-0 mt-40 mr-4 md:mr-36">
               {Options.map((option, index) => (
                 <Link to={option.link} key={index}>
                   <div
@@ -121,12 +121,12 @@ export default function Home() {
                   </div>
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
 
-      {showModal && <MyModal closeModal={closeModal} type={selectedType} />}
+      {/* {showModal && <MyModal closeModal={closeModal} type={selectedType} />} */}
     </div>
   );
 }
