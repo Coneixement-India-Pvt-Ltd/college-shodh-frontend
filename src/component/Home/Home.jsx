@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyModal from "../Modals/Modal";
-import barch_image from "../../assets/barch.jpg";
-import bpharma from "../../assets/bpharma.jpg";
-import bca from "../../assets/bca.jpg";
-import bebtech from "../../assets/bebtech.jpg";
+import barch_image from "../../assets/barch-min.jpg";
+import bpharma from "../../assets/bpharma-min.jpg";
+import bca from "../../assets/bca-min.jpg";
+import bebtech from "../../assets/bebtech-min.jpg";
+import bsc from "../../assets/bsc-min.jpg";
 import "../../styles/Home/Home.css";
 import { IoArrowForwardOutline } from "react-icons/io5";
 
-const BackgroundImages = [barch_image, bpharma, bca, bebtech];
+const BackgroundImages = [barch_image, bpharma, bca, bebtech, bsc];
 
-// const Options = [
-//   { text: "B. Arch", img: "./agri.png", link: "#" },
-//   { text: "B. Pharm", img: "./Pharma.png", link: "#" },
-//   { text: "BCA", img: "./BCA.png", link: "#" },
-//   { text: "BE/B. Tech", img: "./Btech.png", link: "#" },
-//   { text: "B. Sc", img: "./BSC.png", link: "#" },
-// ];
+const Options = [
+  { text: "B. Arch", img: "./agri.png", link: "#" },
+  { text: "B. Pharm", img: "./Pharma.png", link: "#" },
+  { text: "BCA", img: "./BCA.png", link: "#" },
+  { text: "BE/B. Tech", img: "./Btech.png", link: "#" },
+  { text: "B. Sc", img: "./BSC.png", link: "#" },
+];
 
 export default function Home() {
   // const [showModal, setShowModal] = useState(false);
-  // const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
+  const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
 
   // const closeModal = () => setShowModal(false);
   // const openModal = (type) => {
@@ -29,19 +30,24 @@ export default function Home() {
   // };
 
   const [bgIndex, setBgIndex] = useState(0);
-  // const [optionIndex, setOptionIndex] = useState(0);
+  const [optionIndex, setOptionIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
-  //     setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
-  //   }, 5000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setBgIndex((prevIndex) => (prevIndex + 1) % BackgroundImages.length);
+      setOptionIndex((prevIndex) => (prevIndex + 1) % Options.length);
+    }, 5000);
 
-  //   return () => clearInterval(intervalId);
-  // }, []);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div>
+      <link rel="preload" as="image" href={barch_image} />
+      <link rel="preload" as="image" href={bpharma} />
+      <link rel="preload" as="image" href={bca} />
+      <link rel="preload" as="image" href={bebtech} />
+      <link rel="preload" as="image" href={bsc} />
       <div
         id="image"
         className="relative h-96 bg-cover bg-center bg-[rgba(0,0,0,0.4)] bg-blend-darken"
@@ -100,28 +106,19 @@ export default function Home() {
               </form>
             </div>
 
-            {/* <div className="options-container absolute top-0 right-0 mt-40 mr-4 md:mr-36">
+            <div className="options-container absolute top-0 right-0 mt-40 mr-4 md:mr-36">
               {Options.map((option, index) => (
-                <Link to={option.link} key={index}>
                   <div
+                    key={index}
                     className={`option-item text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-40 ${optionIndex === index
                       ? "font-bold text-orange-600 text-decoration-line: underline"
                       : "text-white"
                       }`}
-                    onClick={
-                      option.text === "B. Sc" || option.text === "BE/B. Tech"
-                        ? () =>
-                          openModal(
-                            option.text === "B. Sc" ? "BSc" : "BE/B. Tech"
-                          )
-                        : undefined
-                    }
                   >
                     {option.text}
                   </div>
-                </Link>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
