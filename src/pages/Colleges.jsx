@@ -193,7 +193,7 @@ function Colleges() {
         fixed top-0 bottom-0 left-0 right-0 
         py-64 md:py-0        
         bg-[rgba(0,0,0,0.5)] md:bg-transparent
-        md:w-1/2
+        md:w-1/3
         md:ml-4 lg:ml-32
         md:my-4
         ` + (openFilters ? "block" : "hidden md:block")}
