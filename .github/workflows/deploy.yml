@@ -21,25 +21,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create .htaccess file
-        run: |
-          echo "<IfModule mod_rewrite.c>" > ./.htaccess
-          echo "  RewriteEngine On" >> ./.htaccess
-          echo "  RewriteBase /" >> ./.htaccess
-          echo "  RewriteRule ^index\.html$ - [L]" >> ./.htaccess
-          echo "  RewriteCond %{REQUEST_FILENAME} !-f" >> ./.htaccess
-          echo "  RewriteCond %{REQUEST_FILENAME} !-d" >> ./.htaccess
-          echo "  RewriteCond %{REQUEST_FILENAME} !-l" >> ./.htaccess
-          echo "  RewriteRule . /index.html [L]" >> ./.htaccess
-          echo "</IfModule>" >> ./.htaccess
-
-
       - name: Run build
         run: | 
           npm run build
-          mv .htaccess ./dist
 
-          
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
