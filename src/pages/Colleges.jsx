@@ -188,7 +188,7 @@ function Colleges() {
       lg:w-1/2 w-full md:ml-4 lg:ml-32 mt-4 mb-4 hidden md:block
        */}
         <div className={`
-        z-[1000] overflow-auto
+        z-[1000] md:z-0 overflow-auto
         w-full md:static 
         fixed top-0 bottom-0 left-0 right-0 
         py-64 md:py-0        
