@@ -1,0 +1,48 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.18.0'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create .htaccess file
+        run: |
+          echo "<IfModule mod_rewrite.c>" > ./.htaccess
+          echo "  RewriteEngine On" >> ./.htaccess
+          echo "  RewriteBase /" >> ./.htaccess
+          echo "  RewriteRule ^index\.html$ - [L]" >> ./.htaccess
+          echo "  RewriteCond %{REQUEST_FILENAME} !-f" >> ./.htaccess
+          echo "  RewriteCond %{REQUEST_FILENAME} !-d" >> ./.htaccess
+          echo "  RewriteCond %{REQUEST_FILENAME} !-l" >> ./.htaccess
+          echo "  RewriteRule . /index.html [L]" >> ./.htaccess
+          echo "</IfModule>" >> ./.htaccess
+
+
+      - name: Run build
+        run: | 
+          npm run build
+          mv .htaccess ./dist
+
+          
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npx gh-pages -d dist -b deploy -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
