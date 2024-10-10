@@ -226,8 +226,8 @@ function Colleges() {
         )} */}
 
 
-        <div className="w-full pl-10 flex flex-col mt-3 items-center">
-          <button className="bg-blue-500 text-white p-2 rounded-md md:w-[70%] w-full mr-12 mb-4 hover:bg-blue-700 md:hidden"
+        <div className="w-full flex flex-col mt-3 items-center">
+          <button className="bg-blue-500 text-white p-2 rounded-md md:w-[70%] w-11/12 mb-4 hover:bg-blue-700 md:hidden"
             onClick={() => setOpenFilters(!openFilters)}
           >
             Filters

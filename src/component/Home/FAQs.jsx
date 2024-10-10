@@ -3,7 +3,7 @@ import React from "react";
 const FAQs = () => {
   return (
     <>
-      <div className="space-y-4 ml-32 mr-32 p-6">
+      <div className="space-y-4 md:mx-32 p-6">
         <h1 className="text-2xl font-semibold">FAQs</h1>
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
