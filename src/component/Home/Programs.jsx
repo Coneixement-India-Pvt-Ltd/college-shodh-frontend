@@ -14,11 +14,22 @@ const Programs = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedType, setSelectedType] = useState("BSc"); // Default to BSc
 
-  const closeModal = () => setShowModal(false);
+  const closeModal = (e) => {
+    setShowModal(false);    
+    if (e.name){
+      redirectCourse(e.name);
+    }    
+    e.stopPropagation();
+  }
   const openModal = (type) => {
     setShowModal(true);
-    setSelectedType(type);
+    setSelectedType(type);    
   };
+
+  const redirectCourse = (course) => {
+    window.location.href = `/colleges?course=${course}`
+  }
+
 
   return (
     <div className="text-center pb-8">
@@ -38,12 +49,16 @@ const Programs = () => {
           <Link to={option.link} key={index}>
             <button
               className="h-28 w-52 bg-gray-200 border border-black rounded-lg flex flex-col items-center justify-center hover:shadow-xl hover:bg-slate-300 transition-all"
-              onClick={
-                option.text === "B. Sc" || option.text === "BE/B. Tech"
-                  ? () =>
-                      openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
-                  : undefined
-              }
+              onClick={ () => {
+
+                if(option.text === "B. Sc" || option.text === "BE/B. Tech"){
+                    openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
+                }
+                else{
+                  redirectCourse(option.text)
+                }
+
+              }}
             >
               <img
                 src={option.img}

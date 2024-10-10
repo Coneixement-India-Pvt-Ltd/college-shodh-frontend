@@ -21,6 +21,17 @@ const Options = [
 function Colleges() {
   // Get the query from the URL
   const query = new URLSearchParams(window.location.search);
+  let courseparam = query.get("course") || ""
+  console.log(courseparam);
+  
+  if (courseparam == "B. Arch") {
+    courseparam = "Architecture";
+  }
+  if (courseparam == "B. Pharm") {
+    courseparam = "Pharmacy";
+  }
+
+  
   const searchQuery = query.get("search") || "";
 
   const [colleges, setColleges] = useState([]);
@@ -28,7 +39,7 @@ function Colleges() {
   const [filterNaac, setFilterNaac] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [selectedState, setSelectedState] = useState("");
-  const [selectedCourse, setSelectedCourse] = useState("");
+  const [selectedCourse, setSelectedCourse] = useState(courseparam);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true); // Added loading state
   const collegesPerPage = 10;
