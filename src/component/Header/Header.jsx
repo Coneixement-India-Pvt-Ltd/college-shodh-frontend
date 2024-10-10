@@ -76,6 +76,8 @@ export default function Header() {
                   to="https://entechonline.com/"
                   className="text-white bg-orange-500 hover:bg-orange-700 font-medium rounded-lg text-sm px-4 md:px-5 py-2 md:py-2.5 mr-2 focus:outline-none"
                   onClick={closeMenu}
+                   target="_blank"
+                   rel="noopener noreferrer"
                 >
                   Explore Your Passion
                 </Link>
