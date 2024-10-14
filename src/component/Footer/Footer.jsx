@@ -233,7 +233,7 @@ export default function Footer() {
   
       </div>
 
-      <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
+      {/* <ul className="mt-8 flex justify-start gap-6 sm:mt-0 sm:justify-end">
         <li>
           <a
             href="#"
@@ -326,10 +326,10 @@ export default function Footer() {
             </svg>
           </a>
         </li>
-      </ul>
+      </ul> */}
     </div>
 
-    <div
+    {/* <div
       className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 text-left"
     >
       <div>
@@ -415,7 +415,7 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-    </div>
+    </div> */}
     
     <p className="text-xs text-gray-500">&copy; 2024. Coneixement India Pvt Ltd. All rights reserved.</p>
   </div>
