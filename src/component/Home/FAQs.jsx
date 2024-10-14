@@ -85,7 +85,8 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            Can I contact a college directly through College Shodh?
+            College Shodh provides contact information for each college, including phone numbers, email addresses, and official websites. You can reach out to the college directly for more specific queries.
+
           </p>
         </details>
 
