@@ -7,9 +7,7 @@ const FAQs = () => {
         <h1 className="text-2xl font-semibold">FAQs</h1>
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-            <h2 className="font-medium">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            </h2>
+            <h2 className="font-medium">What is College Shodh?</h2>
 
             <svg
               className="size-5 shrink-0 transition duration-300 group-open:-rotate-180"
@@ -28,17 +26,18 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
-            voluptas rerum magni ab minima, exercitationem sint officia minus
-            earum et magnam dicta labore rem quibusdam sequi suscipit,
-            aspernatur veniam.
+            College Shodh is a college search platform designed to help students
+            discover and compare the best colleges across various fields in
+            India. It provides detailed information on courses, rankings, and
+            much more.
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              {/* Lorem, ipsum dolor sit amet consectetur adipisicing elit. */}
+              Is College Shodh free to use?
             </h2>
 
             <svg
@@ -58,17 +57,15 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
-            voluptas rerum magni ab minima, exercitationem sint officia minus
-            earum et magnam dicta labore rem quibusdam sequi suscipit,
-            aspernatur veniam.
+            Yes, College Shodh is free for all users. You can search and explore
+            college details without any charges.
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Can I contact a college directly through College Shodh?
             </h2>
 
             <svg
@@ -88,17 +85,14 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
-            voluptas rerum magni ab minima, exercitationem sint officia minus
-            earum et magnam dicta labore rem quibusdam sequi suscipit,
-            aspernatur veniam.
+            Can I contact a college directly through College Shodh?
           </p>
         </details>
 
         <details className="group [&_summary::-webkit-details-marker]:hidden">
           <summary className="flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
             <h2 className="font-medium">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            What is NAAC and NBA accreditation, and why is it important?
             </h2>
 
             <svg
@@ -118,10 +112,9 @@ const FAQs = () => {
           </summary>
 
           <p className="mt-4 px-4 leading-relaxed text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur sit
-            voluptas rerum magni ab minima, exercitationem sint officia minus
-            earum et magnam dicta labore rem quibusdam sequi suscipit,
-            aspernatur veniam.
+          NAAC (National Assessment and Accreditation Council) evaluates and accredits higher education institutions based on criteria like teaching, research, and infrastructure.
+          NBA (National Board of Accreditation) specifically accredits technical programs like engineering and management.
+
           </p>
         </details>
       </div>
