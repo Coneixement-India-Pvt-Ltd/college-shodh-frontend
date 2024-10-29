@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Enquiry = () => {
   return (
@@ -9,12 +10,12 @@ const Enquiry = () => {
         We’d love to hear from you! Lorem ipsum, dolor sit amet
         consectetur adipisicing elit.
         </p>
-        <a
-                href="/contact"
+        <Link
+                to="/contact"
                 className="inline-block rounded bg-blue-700 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-400"
               >
                 Contact Us
-        </a>
+        </Link>
       </div>
     </div>
   );
