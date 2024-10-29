@@ -108,7 +108,7 @@ export default function Home() {
                   <div
                     key={index}
                     className={`text-left text-lg md:text-3xl font-sans font-semibold text-gray-800 mb-2 mr-40 ${optionIndex === index
-                      ? "font-bold text-orange-600 text-decoration-line: underline"
+                      ? "font-bold text-orange-600"
                       : "text-white"
                       }`}
                   >

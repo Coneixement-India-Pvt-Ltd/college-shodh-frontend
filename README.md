@@ -1,10 +1,26 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Figma Board: 
+https://www.figma.com/design/EJDvkYutTwkhrh8K0ukgfd/College-Shodh
 
-Currently, two official plugins are available:
+# EmailJS Setup Guide
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these steps to set up project using environment variables from the `.env.example` file.
 
-- Figma Board: https://www.figma.com/design/EJDvkYutTwkhrh8K0ukgfd/College-Shodh
+## Step 1: Copy from `.env.example`
+
+1. In the root directory of your project, locate the `.env.example` file.
+2. Copy this file and rename the copy to `.env` using the following command:
+
+```bash
+cp .env.example .env
+```
+## Step 2: Update .env File
+1. Open the newly created .env file and update the following fields with your EmailJS credentials:
+
+``` bash
+VITE_EMAILJS_SERVICE_ID = "your_service_id"
+VITE_EMAILJS_TEMPLATE_ID = "your_template_id"
+VITE_EMAILJS_PUBLIC_KEY = "your_public_key"
+```
+
+2. Replace the placeholder values (your_service_id, your_template_id, your_public_key) with the actual values from your EmailJS account.

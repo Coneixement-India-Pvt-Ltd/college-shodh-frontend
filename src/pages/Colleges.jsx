@@ -21,9 +21,10 @@ const Options = [
 function Colleges() {
   // Get the query from the URL
   const query = new URLSearchParams(window.location.search);
-  let courseparam = query.get("course") || ""
-  console.log(courseparam);
-  
+  let courseparam = query.get("course") || "";
+  const cityparam = query.get("city") || "";
+  console.log(courseparam, cityparam);
+
   if (courseparam == "B. Arch") {
     courseparam = "Architecture";
   }
@@ -31,7 +32,6 @@ function Colleges() {
     courseparam = "Pharmacy";
   }
 
-  
   const searchQuery = query.get("search") || "";
 
   const [colleges, setColleges] = useState([]);
@@ -39,9 +39,10 @@ function Colleges() {
   const [filterNaac, setFilterNaac] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [selectedState, setSelectedState] = useState("");
+  const [selectedCity, setSelectedCity] = useState(cityparam);
   const [selectedCourse, setSelectedCourse] = useState(courseparam);
   const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(true); // Added loading state
+  const [loading, setLoading] = useState(true);
   const collegesPerPage = 10;
 
   useEffect(() => {
@@ -85,19 +86,22 @@ function Colleges() {
   };
 
   const filteredColleges = colleges.filter((college) => {
-
     const isStateMatch = selectedState
       ? college.address.toLowerCase().includes(selectedState.toLowerCase())
       : true;
+    const isCityMatch = selectedCity
+      ? college.address.toLowerCase().includes(selectedCity.toLowerCase())
+      : true; 
     const isCourseMatch = selectedCourse
       ? college.dept &&
-      college.dept.toLowerCase().includes(selectedCourse.toLowerCase())
+        college.dept.toLowerCase().includes(selectedCourse.toLowerCase())
       : true;
     return (
       (search === "" ||
         college.college_name.toLowerCase().includes(search.toLowerCase())) &&
       (!filterNaac || college.naac === filterNaac) &&
       isStateMatch &&
+      isCityMatch &&
       isCourseMatch
     );
   });
@@ -121,7 +125,7 @@ function Colleges() {
     if (course) {
       handleCourseChange(course);
     }
-  }
+  };
   const openModal = (type) => {
     setShowModal(true);
     setSelectedType(type);
@@ -149,10 +153,9 @@ function Colleges() {
               window.history.pushState(
                 "",
                 "",
-                `/colleges?search=${e.target.value}`
+                `/colleges?search=${e.target.value}&city=${selectedCity}`
               );
-              setSearch(e.target.value)
-
+              setSearch(e.target.value);
             }}
             placeholder="Search college"
             className="p-2 h-11 w-96 mb-5 border border-black-400 rounded-2xl focus:outline-none focus:border-blue-600 text-center pl-10"
@@ -173,13 +176,11 @@ function Colleges() {
                 className="h-12 w-32 bg-[#569df4] border border-black-100 rounded-md hover:drop-shadow-lg"
                 onClick={() => {
                   if (option.text === "B. Sc" || option.text === "BE/B. Tech") {
-                    openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech")
-                  }
-                  else {
+                    openModal(option.text === "B. Sc" ? "BSc" : "BE/B. Tech");
+                  } else {
                     handleCourseChange({ name: option.course });
                   }
-                }
-                }
+                }}
               >
                 <span className="hover:underline text-white font-medium">
                   {option.text}
@@ -195,20 +196,22 @@ function Colleges() {
       </h1>
 
       <div className="flex w-full justify-between">
-      {/* 
+        {/*
       lg:w-1/2 w-full md:ml-4 lg:ml-32 mt-4 mb-4 hidden md:block
        */}
-        <div className={`
+        <div
+          className={
+            `
         z-[1000] md:z-0 overflow-auto
-        w-full md:static 
-        fixed top-0 bottom-0 left-0 right-0 
-        py-64 md:py-0        
+        w-full md:static
+        fixed top-0 bottom-0 left-0 right-0
+        py-64 md:py-0
         bg-[rgba(0,0,0,0.5)] md:bg-transparent
         md:w-1/3
         md:ml-4 lg:ml-32
         md:my-4
-        ` + (openFilters ? "block" : "hidden md:block")}
-        
+        ` + (openFilters ? "block" : "hidden md:block")
+          }
         >
           <Ranking
             filterNaac={filterNaac}
@@ -236,9 +239,9 @@ function Colleges() {
           </div>
         )} */}
 
-
         <div className="w-full pl-10 flex flex-col mt-3 items-center">
-          <button className="bg-blue-500 text-white p-2 rounded-md md:w-[70%] w-full mr-12 mb-4 hover:bg-blue-700 md:hidden"
+          <button
+            className="bg-blue-500 text-white p-2 rounded-md md:w-[70%] w-full mr-12 mb-4 hover:bg-blue-700 md:hidden"
             onClick={() => setOpenFilters(!openFilters)}
           >
             Filters

@@ -23,13 +23,11 @@ const TopCities = () => {
     { name: "Bangalore", img: "./cities/banglore.png" },
     { name: "Mumbai", img: "./cities/mumbai.png" },
     { name: "Jaipur", img: "./cities/jaipur.png" },
-    { name: "Gurgaon", img: "./cities/kolkata.png" },
-    { name: "Delhi", img: "./cities/kolkata.png" },
-    { name: "Chennai", img: "./cities/kolkata.png" },
-    { name: "Hyderabad", img: "./cities/kolkata.png" },
-    { name: "Ahmedabad", img: "./cities/kolkata.png" },
-    { name: "Ahmedabad", img: "./cities/kolkata.png" },
-    { name: "Ahmedabad", img: "./cities/kolkata.png" },
+    { name: "Gurgaon", img: "./cities/gurgaon.png" },
+    { name: "Delhi", img: "./cities/delhi.png" },
+    { name: "Chennai", img: "./cities/chennai.png" },
+    { name: "Hyderabad", img: "./cities/hyderabad.png" },
+    { name: "Ahmedabad", img: "./cities/ahmedabad.png" },
   ];
 
   return (
@@ -64,7 +62,7 @@ const TopCities = () => {
           {cities
             .slice(startIndex, startIndex + citiesPerPage)
             .map((city, index) => (
-              <Link to="#" key={index}>
+              <Link to={`/colleges?city=${city.name}`} key={index}>
                 <button className="h-28 w-44 border border-black rounded-lg flex flex-col items-center justify-center">
                   <img
                     src={city.img}
@@ -82,8 +80,9 @@ const TopCities = () => {
         <button
           onClick={handleNext}
           disabled={startIndex + citiesPerPage >= cities.length}
-          className={`arrow-button ${startIndex + citiesPerPage >= cities.length ? "disabled" : ""
-            }`}
+          className={`arrow-button ${
+            startIndex + citiesPerPage >= cities.length ? "disabled" : ""
+          }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
