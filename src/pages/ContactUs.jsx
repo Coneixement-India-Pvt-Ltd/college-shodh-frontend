@@ -10,13 +10,6 @@ function ContactUs() {
   return (
     <>
       <div>
-        {/*
-  Heads up! 👋
-
-  Plugins:
-    - @tailwindcss/forms
-*/}
-
         <section className="bg-gray-100">
           <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
@@ -29,7 +22,6 @@ function ContactUs() {
                 </p>
 
                 <div className="mt-8">
-                  {/* <a href="#" className="text-2xl font-bold text-orange-600"> 0151 475 4450 </a> */}
 
                   <p className="mt-2 not-italic text-orange-600 text-left flex items-center pl-40">
                     <MdEmail className="text-orange-400 size-5 mr-1" /> {" "}

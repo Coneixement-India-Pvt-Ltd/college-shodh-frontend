@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Vision = () => {
   return (
@@ -18,16 +19,16 @@ const Vision = () => {
               et ut amet iure totam ducimus blanditiis provident maxime
             </p>
 
-            <div className="mt-4 md:mt-8">
-              <a
-                href="#"
+            <div className="mt-4 md:mt-8">    
+              <Link
+                to="#"
                 className="inline-block rounded bg-blue-700 px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-400"
               >
                 Get Started Today
-              </a>
+              </Link>
             </div>
           </div>
-        </div>
+        </div>``
 
         <img
           alt="Data Visualization"
